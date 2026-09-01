@@ -1,0 +1,193 @@
+@import "tailwindcss";
+
+/* ---------------------------------------------------------------------------
+   IKO ELECTRONICS — design tokens
+
+   Structure (type scale, spacing, radii, elevation) comes from
+   stitch_modern_tech_electronics_store/electronica_modern/DESIGN.md.
+
+   COLOUR does NOT. DESIGN.md was generated for a fictional "TechNova" brand on
+   Electric Blue #004AC6. The real brand is IKO ELECTRONICS: purple #683695 and
+   navy #0E2043, sampled directly from the logo files in /Project Pics.
+   The ramps below are tints/shades of those two colours, contrast-checked.
+   --------------------------------------------------------------------------- */
+@theme {
+  /* --- Fonts --- */
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  /* --- Brand primitives (never use these directly in components) --- */
+  --color-brand-purple: #683695;
+  --color-brand-navy: #0e2043;
+
+  /* --- Primary: purple. CTAs, links, focus, active states. -----------------
+     white on #683695 = 8.23:1 (AAA)   #683695 on white = 8.23:1 (AAA) */
+  --color-primary: #683695;
+  --color-primary-hover: #552c7a;
+  --color-primary-pressed: #442361;
+  --color-on-primary: #ffffff;
+  --color-primary-muted: #a486bf;
+  --color-primary-container: #e8e1ef;
+  --color-on-primary-container: #442361;
+
+  /* --- Text: navy. ---------------------------------------------------------
+     #0e2043 on #f8f9fa = 16.1:1 (AAA)  #4a5872 on #f8f9fa = 6.8:1 (AA) */
+  --color-on-surface: #0e2043;
+  --color-on-background: #0e2043;
+  --color-on-surface-variant: #4a5872;
+
+  /* --- Outlines --- */
+  --color-outline: #7a8498;
+  --color-outline-variant: #cfd2d9;
+
+  /* --- Surfaces: neutrals pulled slightly cool so they sit with the navy --- */
+  --color-background: #f8f9fa;
+  --color-surface: #f8f9fa;
+  --color-surface-lowest: #ffffff;
+  --color-surface-low: #f3f4f6;
+  --color-surface-container: #e7e9ec;
+  --color-surface-high: #dfe2e6;
+  --color-surface-highest: #d6dae0;
+
+  /* --- Inverse: dark sections (footer, banners) --- */
+  --color-inverse-surface: #0e2043;
+  --color-inverse-on-surface: #f3f4f6;
+  /* On the navy footer, purple-on-navy is only 1.95:1 — the button shape
+     disappears. These light tints give ~8.6:1 against the navy ground. */
+  --color-inverse-primary: #c9b3dd;
+  --color-inverse-primary-hover: #ddcbeb;
+
+  /* --- Sale / savings accent (warm, reads as urgency against the purple) --- */
+  --color-sale: #bc4800;
+  --color-on-sale: #ffffff;
+  --color-sale-container: #ffede6;
+  --color-on-sale-container: #7d2d00;
+
+  /* --- Success: "In Stock" chips.
+     DESIGN.md calls for a success tint but never defines one — added here. --- */
+  --color-success: #0f7b3f;
+  --color-on-success: #ffffff;
+  --color-success-container: #dcf3e5;
+  --color-on-success-container: #05411f;
+
+  /* --- Error --- */
+  --color-error: #ba1a1a;
+  --color-on-error: #ffffff;
+  --color-error-container: #ffdad6;
+  --color-on-error-container: #93000a;
+
+  /* --- Type scale (from DESIGN.md) --- */
+  --text-display-lg: 48px;
+  --text-display-lg--line-height: 56px;
+  --text-display-lg--letter-spacing: -0.02em;
+  --text-display-lg--font-weight: 700;
+
+  --text-headline-lg: 32px;
+  --text-headline-lg--line-height: 40px;
+  --text-headline-lg--letter-spacing: -0.01em;
+  --text-headline-lg--font-weight: 700;
+
+  --text-headline-md: 24px;
+  --text-headline-md--line-height: 32px;
+  --text-headline-md--font-weight: 600;
+
+  --text-body-lg: 18px;
+  --text-body-lg--line-height: 28px;
+  --text-body-lg--font-weight: 400;
+
+  --text-body-md: 16px;
+  --text-body-md--line-height: 24px;
+  --text-body-md--font-weight: 400;
+
+  --text-label-md: 14px;
+  --text-label-md--line-height: 20px;
+  --text-label-md--letter-spacing: 0.05em;
+  --text-label-md--font-weight: 600;
+
+  --text-label-sm: 12px;
+  --text-label-sm--line-height: 16px;
+  --text-label-sm--font-weight: 500;
+
+  /* --- Radii (overrides Tailwind defaults — DESIGN.md's scale is larger) --- */
+  --radius-sm: 0.25rem;
+  --radius-DEFAULT: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+
+  /* --- Elevation ("Natural Ambient") --- */
+  --shadow-card: 0 4px 20px rgb(14 32 67 / 0.06);
+  --shadow-card-hover: 0 8px 30px rgb(14 32 67 / 0.10);
+
+  /* --- Layout --- */
+  --container-page: 1280px;
+  --spacing-gutter: 24px;
+  --spacing-section: 80px;
+}
+
+/* Hero entrance. Restrained on purpose — the hero's job is to invite, not
+   perform. The global prefers-reduced-motion rule below collapses this to a
+   near-instant snap, and `both` keeps the final state applied either way. */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@utility animate-rise {
+  animation: rise 0.6s cubic-bezier(0.2, 0.7, 0.3, 1) both;
+}
+
+/* Headline scales down ~12% on mobile so titles don't break awkwardly. */
+@utility text-headline-lg-responsive {
+  font-size: 28px;
+  line-height: 36px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  @variant sm {
+    font-size: 32px;
+    line-height: 40px;
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-on-background);
+    font-family: var(--font-sans);
+    font-size: var(--text-body-md);
+    line-height: 24px;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* One consistent, visible focus ring everywhere. Never remove this without
+     replacing it — keyboard users navigate entirely by focus. */
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
+
+  /* Respect users who asked the OS to reduce motion. */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}

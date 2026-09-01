@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Shop - TechNova</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "background": "#f9f9f9",
+                      "on-primary": "#ffffff",
+                      "surface": "#f9f9f9",
+                      "on-tertiary-container": "#ffede6",
+                      "on-primary-fixed": "#00174b",
+                      "on-primary-container": "#eeefff",
+                      "error": "#ba1a1a",
+                      "error-container": "#ffdad6",
+                      "on-secondary-fixed-variant": "#474746",
+                      "surface-variant": "#e2e2e2",
+                      "primary-fixed": "#dbe1ff",
+                      "on-error": "#ffffff",
+                      "on-tertiary": "#ffffff",
+                      "tertiary-fixed": "#ffdbcd",
+                      "on-surface-variant": "#434655",
+                      "secondary-fixed-dim": "#c8c6c5",
+                      "surface-dim": "#dadada",
+                      "outline": "#737686",
+                      "on-error-container": "#93000a",
+                      "surface-bright": "#f9f9f9",
+                      "on-background": "#1a1c1c",
+                      "on-secondary-fixed": "#1c1b1b",
+                      "surface-container-highest": "#e2e2e2",
+                      "surface-container-low": "#f3f3f3",
+                      "inverse-on-surface": "#f0f1f1",
+                      "surface-tint": "#0053db",
+                      "secondary": "#5f5e5e",
+                      "surface-container": "#eeeeee",
+                      "primary-fixed-dim": "#b4c5ff",
+                      "inverse-primary": "#b4c5ff",
+                      "primary": "#004ac6",
+                      "on-tertiary-fixed-variant": "#7d2d00",
+                      "on-secondary": "#ffffff",
+                      "primary-container": "#2563eb",
+                      "on-tertiary-fixed": "#360f00",
+                      "tertiary-fixed-dim": "#ffb596",
+                      "outline-variant": "#c3c6d7",
+                      "on-secondary-container": "#636262",
+                      "on-primary-fixed-variant": "#003ea8",
+                      "on-surface": "#1a1c1c",
+                      "inverse-surface": "#2f3131",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-container-high": "#e8e8e8",
+                      "secondary-container": "#e2dfde",
+                      "tertiary-container": "#bc4800",
+                      "secondary-fixed": "#e5e2e1",
+                      "tertiary": "#943700"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-mobile": "16px",
+                      "gutter": "24px",
+                      "section-padding": "80px",
+                      "container-max-width": "1280px",
+                      "stack-md": "16px",
+                      "margin-desktop": "32px",
+                      "stack-sm": "8px",
+                      "stack-lg": "32px"
+              },
+              "fontFamily": {
+                      "headline-lg-mobile": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "label-sm": [
+                              "Inter"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ],
+                      "display-lg": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "headline-lg-mobile": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        /* Base styles from style guidance */
+        body {
+            background-color: #FAFAFA; /* Matches background */
+        }
+        
+        .product-card-shadow {
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+        
+        .product-card-shadow:hover {
+            box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            background-color: #004ac6; /* primary */
+            color: #ffffff; /* on-primary */
+            border-radius: 0.25rem;
+            min-height: 48px;
+            padding: 0 24px;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 20px;
+            letter-spacing: 0.05em;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.2s;
+        }
+        
+        .btn-primary:hover {
+            background-color: #003ea8; /* on-primary-fixed-variant */
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: #1a1c1c; /* on-background */
+            border: 1px solid #737686; /* outline */
+            border-radius: 0.25rem;
+            min-height: 48px;
+            padding: 0 24px;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 20px;
+            letter-spacing: 0.05em;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: border-color 0.2s, color 0.2s;
+        }
+        
+        .btn-secondary:hover {
+            border-color: #1a1c1c;
+            color: #1a1c1c;
+        }
+
+        .input-field {
+            border: 1px solid #e2e2e2; /* surface-variant */
+            border-radius: 0.25rem;
+            min-height: 48px;
+            padding: 0 16px;
+            width: 100%;
+            transition: border-color 0.2s;
+        }
+        
+        .input-field:focus {
+            outline: none;
+            border-color: #004ac6; /* primary */
+            box-shadow: 0 0 0 1px #004ac6;
+        }
+        
+        /* Custom scrollbar for sidebar */
+        .sidebar-scroll::-webkit-scrollbar {
+            width: 6px;
+        }
+        .sidebar-scroll::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .sidebar-scroll::-webkit-scrollbar-thumb {
+            background-color: #e2e2e2;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased flex flex-col min-h-screen">
+<!-- TopNavBar (Shared Component) -->
+<header class="bg-surface/80 dark:bg-background/80 backdrop-blur-md fixed top-0 w-full z-50 border-b border-outline-variant/30 dark:border-outline/20 shadow-sm">
+<div class="flex items-center justify-between px-margin-desktop h-20 max-w-container-max-width mx-auto">
+<div class="flex items-center gap-8">
+<!-- Brand Logo -->
+<a class="font-headline-md text-headline-md font-bold text-on-background dark:text-on-primary-fixed" href="#">TechNova</a>
+<!-- Desktop Navigation -->
+<nav class="hidden md:flex items-center gap-6">
+<a class="font-body-md text-body-md text-secondary dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">Home</a>
+<a class="font-body-md text-body-md text-primary dark:text-primary-fixed font-semibold border-b-2 border-primary pb-1" href="#">Shop</a>
+<a class="font-body-md text-body-md text-secondary dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">Categories</a>
+<a class="font-body-md text-body-md text-secondary dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">Deals</a>
+<a class="font-body-md text-body-md text-secondary dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">About</a>
+<a class="font-body-md text-body-md text-secondary dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">Contact</a>
+</nav>
+</div>
+<!-- Search & Actions -->
+<div class="flex items-center gap-4">
+<div class="hidden lg:flex relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-secondary">search</span>
+<input class="input-field pl-10 h-10 min-h-[40px] text-sm w-64 bg-surface-container-lowest" placeholder="Search..." type="text"/>
+</div>
+<button class="text-on-background hover:text-primary transition-colors scale-95 active:scale-90 transition-transform p-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">person</span>
+</button>
+<button class="text-on-background hover:text-primary transition-colors scale-95 active:scale-90 transition-transform p-2 relative">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">shopping_cart</span>
+<span class="absolute top-1 right-1 w-2 h-2 bg-primary rounded-full"></span>
+</button>
+<button class="md:hidden text-on-background p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-grow pt-[120px] pb-section-padding px-margin-mobile md:px-margin-desktop max-w-container-max-width mx-auto w-full flex flex-col md:flex-row gap-gutter">
+<!-- Sidebar Filters -->
+<aside class="w-full md:w-64 flex-shrink-0 mb-8 md:mb-0">
+<div class="sticky top-[100px] sidebar-scroll max-h-[calc(100vh-120px)] overflow-y-auto pr-2">
+<h2 class="font-headline-md text-headline-md mb-6">Filters</h2>
+<!-- Categories -->
+<div class="mb-8 border-b border-surface-variant pb-6">
+<h3 class="font-label-md text-label-md text-on-surface-variant mb-4 uppercase tracking-wider">Categories</h3>
+<ul class="space-y-3">
+<li>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="form-checkbox h-4 w-4 text-primary border-outline rounded focus:ring-primary focus:ring-offset-background bg-surface-container-lowest" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-background group-hover:text-primary transition-colors">All Categories</span>
+</label>
+</li>
+<li>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="form-checkbox h-4 w-4 text-primary border-outline rounded focus:ring-primary focus:ring-offset-background bg-surface-container-lowest" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface-variant group-hover:text-primary transition-colors">Keyboards</span>
+</label>
+</li>
+<li>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="form-checkbox h-4 w-4 text-primary border-outline rounded focus:ring-primary focus:ring-offset-background bg-surface-container-lowest" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface-variant group-hover:text-primary transition-colors">Mice</span>
+</label>
+</li>
+<li>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="form-checkbox h-4 w-4 text-primary border-outline rounded focus:ring-primary focus:ring-offset-background bg-surface-container-lowest" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface-variant group-hover:text-primary transition-colors">Audio</span>
+</label>
+</li>
+<li>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="form-checkbox h-4 w-4 text-primary border-outline rounded focus:ring-primary focus:ring-offset-background bg-surface-container-lowest" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface-variant group-hover:text-primary transition-colors">Power Banks</span>
+</label>
+</li>
+</ul>
+</div>
+<!-- Price Range -->
+<div class="mb-8 border-b border-surface-variant pb-6">
+<h3 class="font-label-md text-label-md text-on-surface-variant mb-4 uppercase tracking-wider">Price Range</h3>
+<div class="space-y-4">
+<input class="w-full h-1 bg-surface-variant rounded-lg appearance-none cursor-pointer accent-primary" max="500" min="0" type="range" value="250"/>
+<div class="flex items-center justify-between gap-4">
+<div class="relative w-full">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-secondary text-sm">$</span>
+<input class="input-field pl-8 h-10 min-h-[40px] text-sm w-full bg-surface-container-lowest" type="number" value="0"/>
+</div>
+<span class="text-secondary">-</span>
+<div class="relative w-full">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-secondary text-sm">$</span>
+<input class="input-field pl-8 h-10 min-h-[40px] text-sm w-full bg-surface-container-lowest" type="number" value="500"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Brand -->
+<div class="mb-8 border-b border-surface-variant pb-6">
+<h3 class="font-label-md text-label-md text-on-surface-variant mb-4 uppercase tracking-wider">Brand</h3>
+<ul class="space-y-3">
+<li>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="form-checkbox h-4 w-4 text-primary border-outline rounded focus:ring-primary focus:ring-offset-background bg-surface-container-lowest" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface-variant group-hover:text-primary transition-colors">Logitech</span>
+</label>
+</li>
+<li>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="form-checkbox h-4 w-4 text-primary border-outline rounded focus:ring-primary focus:ring-offset-background bg-surface-container-lowest" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface-variant group-hover:text-primary transition-colors">Razer</span>
+</label>
+</li>
+<li>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="form-checkbox h-4 w-4 text-primary border-outline rounded focus:ring-primary focus:ring-offset-background bg-surface-container-lowest" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface-variant group-hover:text-primary transition-colors">Corsair</span>
+</label>
+</li>
+<li>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="form-checkbox h-4 w-4 text-primary border-outline rounded focus:ring-primary focus:ring-offset-background bg-surface-container-lowest" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface-variant group-hover:text-primary transition-colors">Anker</span>
+</label>
+</li>
+</ul>
+</div>
+<!-- Rating -->
+<div class="mb-6">
+<h3 class="font-label-md text-label-md text-on-surface-variant mb-4 uppercase tracking-wider">Rating</h3>
+<ul class="space-y-3">
+<li>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="form-radio h-4 w-4 text-primary border-outline focus:ring-primary focus:ring-offset-background bg-surface-container-lowest" name="rating" type="radio"/>
+<div class="flex items-center text-[#F59E0B]">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star_half</span>
+<span class="ml-2 font-body-md text-body-md text-on-surface-variant group-hover:text-primary transition-colors">&amp; Up</span>
+</div>
+</label>
+</li>
+<li>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="form-radio h-4 w-4 text-primary border-outline focus:ring-primary focus:ring-offset-background bg-surface-container-lowest" name="rating" type="radio"/>
+<div class="flex items-center text-[#F59E0B]">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px] text-surface-variant" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="ml-2 font-body-md text-body-md text-on-surface-variant group-hover:text-primary transition-colors">&amp; Up</span>
+</div>
+</label>
+</li>
+</ul>
+</div>
+</div>
+</aside>
+<!-- Product Grid Area -->
+<div class="flex-1 w-full">
+<!-- Toolbar: Results count & Sort -->
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8 pb-4 border-b border-surface-variant">
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 sm:mb-0">Showing 1-12 of 36 products</p>
+<div class="flex items-center gap-4 w-full sm:w-auto">
+<label class="font-label-md text-label-md text-on-surface-variant whitespace-nowrap" for="sort">Sort By:</label>
+<select class="input-field h-10 min-h-[40px] text-sm py-0 bg-surface-container-lowest cursor-pointer" id="sort">
+<option>Featured</option>
+<option>Price: Low to High</option>
+<option>Price: High to Low</option>
+<option>Newest Arrivals</option>
+</select>
+</div>
+</div>
+<!-- Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-gutter mb-12">
+<!-- Product Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl product-card-shadow overflow-hidden flex flex-col relative group">
+<div class="absolute top-3 left-3 z-10">
+<span class="bg-primary/10 text-primary font-label-sm text-label-sm px-2 py-1 rounded">New</span>
+</div>
+<div class="h-48 w-full p-4 flex items-center justify-center bg-surface-container-lowest relative overflow-hidden">
+<img class="object-contain max-h-full max-w-full transition-transform duration-500 group-hover:scale-105" data-alt="A sleek, modern mechanical gaming keyboard with RGB lighting on a pristine white background. High contrast, sharp focus, professional product photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMMdZEeZz-qsqZat3ReUnLiT85ATSW9vMzLoKD-teONPPOy1jWmBC_mV3a1xuEM6S5Z7hTcOOtwh2XUYXCrP-uqU_rnvhyHgJoUmqnCZ6ETv9HZJ_vRZY74fSgtID5goZQT8s01R8dwzrMJuVbjo7J53K_7OPzzFOz_bhviPjdrNl8mDfu45J3xClSqQXVYZnAt2oolD4VQWVIM9qfJuI__JRSeawUy_iaDnWSeSF-uLR4-S9aH4fL"/>
+</div>
+<div class="p-5 flex flex-col flex-grow">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Logitech</span>
+<div class="flex items-center text-[#F59E0B]">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm ml-1 text-on-surface-variant">4.8</span>
+</div>
+</div>
+<h3 class="font-body-md text-body-md font-semibold text-on-background mb-1 line-clamp-2">Pro X Mechanical Gaming Keyboard</h3>
+<div class="mt-auto pt-4 flex items-center justify-between">
+<span class="font-headline-md text-headline-md text-on-background">$149.99</span>
+<button class="w-10 h-10 rounded-full bg-surface-container hover:bg-primary hover:text-on-primary text-on-background flex items-center justify-center transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl product-card-shadow overflow-hidden flex flex-col relative group">
+<div class="absolute top-3 left-3 z-10">
+<span class="bg-[#ba1a1a]/10 text-[#ba1a1a] font-label-sm text-label-sm px-2 py-1 rounded">Sale</span>
+</div>
+<div class="h-48 w-full p-4 flex items-center justify-center bg-surface-container-lowest relative overflow-hidden">
+<img class="object-contain max-h-full max-w-full transition-transform duration-500 group-hover:scale-105" data-alt="An ergonomic wireless gaming mouse in matte black, angled to show its side buttons, on a clean white background. Professional studio lighting, sharp focus." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHo2SNskQZsjpBKaBgVIQOrp0BQGwTvxudTk4Tdssg0X0YCzc6gunAET-BGDpIczehAUAsdcCScPIH8tQ9QZ7wwPexf0qVvOQ0MYt0wpRk1spGm8s6dsbgJfRMFPER_nvg_7JIlGGfWjUXPS1KGLtRB6mjBtUAkxX0IS4zFGrCN4Z698byfvrKA_9KacjGbBZ_FQQaln_tJ1MyOqeTs47ZeASiKwKaBgNWPfiUyYSR0OwX-lRKecbe"/>
+</div>
+<div class="p-5 flex flex-col flex-grow">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Razer</span>
+<div class="flex items-center text-[#F59E0B]">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm ml-1 text-on-surface-variant">4.9</span>
+</div>
+</div>
+<h3 class="font-body-md text-body-md font-semibold text-on-background mb-1 line-clamp-2">DeathAdder V3 Pro Wireless</h3>
+<div class="mt-auto pt-4 flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary line-through">$149.99</span>
+<span class="font-headline-md text-headline-md text-on-background">$129.99</span>
+</div>
+<button class="w-10 h-10 rounded-full bg-surface-container hover:bg-primary hover:text-on-primary text-on-background flex items-center justify-center transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="bg-surface-container-lowest rounded-xl product-card-shadow overflow-hidden flex flex-col relative group">
+<div class="h-48 w-full p-4 flex items-center justify-center bg-surface-container-lowest relative overflow-hidden">
+<img class="object-contain max-h-full max-w-full transition-transform duration-500 group-hover:scale-105" data-alt="A high-capacity, slim power bank with a digital display, silver metallic finish, isolated on a white background. Minimalist tech aesthetic, crisp lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiHOh0TIrATn4KFBBuyt7j-rGPPJhBLh0qYjTUB1iFYd27pisuahOaiXmL6Neo4zkgutIe0Ui54aGs7z2g_UHArt_7rsut4GXHzn5c8bZ9ebjRuK5zjQXw1DSCUxoVPJhxcAd9WdL6PaXuXeDhHPin0vots4vRkuv9dSU1hYX8fYBDQiby9FR1CMN2f7OkqHcdX6KC9k-Zvk5rr3m-HIjRWXVbFEIHjUEJSbFgUrMzVk80hMGBWIwY"/>
+</div>
+<div class="p-5 flex flex-col flex-grow">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Anker</span>
+<div class="flex items-center text-[#F59E0B]">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm ml-1 text-on-surface-variant">4.7</span>
+</div>
+</div>
+<h3 class="font-body-md text-body-md font-semibold text-on-background mb-1 line-clamp-2">737 PowerCore 24K Power Bank</h3>
+<div class="mt-auto pt-4 flex items-center justify-between">
+<span class="font-headline-md text-headline-md text-on-background">$99.99</span>
+<button class="w-10 h-10 rounded-full bg-surface-container hover:bg-primary hover:text-on-primary text-on-background flex items-center justify-center transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="bg-surface-container-lowest rounded-xl product-card-shadow overflow-hidden flex flex-col relative group">
+<div class="h-48 w-full p-4 flex items-center justify-center bg-surface-container-lowest relative overflow-hidden">
+<img class="object-contain max-h-full max-w-full transition-transform duration-500 group-hover:scale-105" data-alt="Premium over-ear noise cancelling headphones in a minimalist sand color, shown on a pure white background. Studio lit to highlight textures and build quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAK4pM04ssyqx26-62FnU-RekH1oXDhCJqCGAmOqG2B6TXmIGHXYRyMeJa7znaCV3Azy4WUBbuWAqkqNUlKT8NSE5pYCvzhoNIBIKIp5nlctwrZGecY0mP8K_20JUHG41vNgBpvd2HFaKKT3vzjYqnT59-jEBnxidfdaUIOsBVT9zdYGUygmb_s-nXiMqaMh4KjVWt9v-syeqyVfcLec0lW6cAnOsIKZcKw79gw-d_1AK0LptJ7EGlE"/>
+</div>
+<div class="p-5 flex flex-col flex-grow">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Sony</span>
+<div class="flex items-center text-[#F59E0B]">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm ml-1 text-on-surface-variant">4.9</span>
+</div>
+</div>
+<h3 class="font-body-md text-body-md font-semibold text-on-background mb-1 line-clamp-2">WH-1000XM5 Wireless Noise Canceling</h3>
+<div class="mt-auto pt-4 flex items-center justify-between">
+<span class="font-headline-md text-headline-md text-on-background">$348.00</span>
+<button class="w-10 h-10 rounded-full bg-surface-container hover:bg-primary hover:text-on-primary text-on-background flex items-center justify-center transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 5 -->
+<div class="bg-surface-container-lowest rounded-xl product-card-shadow overflow-hidden flex flex-col relative group">
+<div class="h-48 w-full p-4 flex items-center justify-center bg-surface-container-lowest relative overflow-hidden">
+<img class="object-contain max-h-full max-w-full transition-transform duration-500 group-hover:scale-105" data-alt="A sleek, curved ultrawide gaming monitor displaying a vibrant abstract wallpaper, isolated on white. High-end modern electronics product photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0e57KpKnM2jplug6fEgrbWzV4Ie4D56AFeRKev5JSXlcCYclcjP3pH4vRyoMy-lJGI3lDSfDaccVC1rhVPyHmgd2A7ngGh59ruj_BPlthnuWk1bSQ6zg3EQxDKsS1Eg2oqA9gyxvzWjVadCYQq95F91OSBImTcm7CxpH_C5oll-GbFpmyvXJ1EgtWIadAAgLfndgLUgmRWe8Nuv-la1hVUogwJaGfi8ybXhtwWMsjlXKsUMfyiCWp"/>
+</div>
+<div class="p-5 flex flex-col flex-grow">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">LG</span>
+<div class="flex items-center text-[#F59E0B]">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm ml-1 text-on-surface-variant">4.6</span>
+</div>
+</div>
+<h3 class="font-body-md text-body-md font-semibold text-on-background mb-1 line-clamp-2">UltraGear 34" Curved Gaming Monitor</h3>
+<div class="mt-auto pt-4 flex items-center justify-between">
+<span class="font-headline-md text-headline-md text-on-background">$799.99</span>
+<button class="w-10 h-10 rounded-full bg-surface-container hover:bg-primary hover:text-on-primary text-on-background flex items-center justify-center transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 6 -->
+<div class="bg-surface-container-lowest rounded-xl product-card-shadow overflow-hidden flex flex-col relative group">
+<div class="h-48 w-full p-4 flex items-center justify-center bg-surface-container-lowest relative overflow-hidden">
+<img class="object-contain max-h-full max-w-full transition-transform duration-500 group-hover:scale-105" data-alt="A compact mechanical keyboard with custom pastel keycaps on a white background. Top-down view, sharp focus, clean modern tech aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCt_44QH7wcEx3Wi3JnDx2Xz9Yuo92g_NihpI3Oq0b4RKcGqvG1RY8DnKmtS1P8wYWwghwTHxOmbFV0CykZVjZhVk9WYiIWkgg6eo5r5DKjAvLLV73y__uZiUiNBHecckzpMw-Jg5PguVYqSbPiEVw-iLkJ8Zyr0mfjIUjWrx2mzDfHoLKiPuUNQ4FPGUUg4_38GDHNTV8IP_O6nPU3UA1jj7PcT7494lAJRlbyrvxY9nHckA7n-7Dm"/>
+</div>
+<div class="p-5 flex flex-col flex-grow">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Keychron</span>
+<div class="flex items-center text-[#F59E0B]">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm ml-1 text-on-surface-variant">4.8</span>
+</div>
+</div>
+<h3 class="font-body-md text-body-md font-semibold text-on-background mb-1 line-clamp-2">Q1 Pro Custom Wireless Keyboard</h3>
+<div class="mt-auto pt-4 flex items-center justify-between">
+<span class="font-headline-md text-headline-md text-on-background">$199.00</span>
+<button class="w-10 h-10 rounded-full bg-surface-container hover:bg-primary hover:text-on-primary text-on-background flex items-center justify-center transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="flex items-center justify-center gap-2 mt-8">
+<button class="w-10 h-10 rounded bg-surface-container-lowest border border-surface-variant flex items-center justify-center text-on-surface-variant hover:border-primary hover:text-primary transition-colors cursor-not-allowed opacity-50" disabled="">
+<span class="material-symbols-outlined text-[20px]">chevron_left</span>
+</button>
+<button class="w-10 h-10 rounded bg-primary text-on-primary flex items-center justify-center font-label-md text-label-md transition-colors">
+                    1
+                </button>
+<button class="w-10 h-10 rounded bg-surface-container-lowest border border-surface-variant flex items-center justify-center text-on-surface-variant hover:border-primary hover:text-primary transition-colors font-label-md text-label-md">
+                    2
+                </button>
+<button class="w-10 h-10 rounded bg-surface-container-lowest border border-surface-variant flex items-center justify-center text-on-surface-variant hover:border-primary hover:text-primary transition-colors font-label-md text-label-md">
+                    3
+                </button>
+<span class="w-10 h-10 flex items-center justify-center text-secondary">...</span>
+<button class="w-10 h-10 rounded bg-surface-container-lowest border border-surface-variant flex items-center justify-center text-on-surface-variant hover:border-primary hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</div>
+</div>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="bg-surface-container-lowest dark:bg-surface-dim w-full py-section-padding border-t border-outline-variant dark:border-outline mt-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max-width mx-auto">
+<!-- Brand Column -->
+<div class="flex flex-col gap-4">
+<a class="font-headline-md text-headline-md font-bold text-on-surface dark:text-on-primary-fixed" href="#">TechNova</a>
+<p class="font-body-md text-body-md text-secondary dark:text-on-surface-variant max-w-xs">
+                    Premium consumer electronics for the modern professional and enthusiast.
+                </p>
+<div class="flex gap-4 mt-2 text-secondary dark:text-on-surface-variant">
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">language</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">mail</span>
+</div>
+</div>
+<!-- Links -->
+<div class="flex flex-col gap-3">
+<h4 class="font-label-md text-label-md text-on-background dark:text-on-primary-fixed uppercase tracking-wider mb-2">Support</h4>
+<a class="font-body-md text-body-md text-secondary dark:text-on-surface-variant opacity-80 hover:opacity-100 hover:text-on-background dark:hover:text-on-primary-fixed underline transition-opacity" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-secondary dark:text-on-surface-variant opacity-80 hover:opacity-100 hover:text-on-background dark:hover:text-on-primary-fixed underline transition-opacity" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-secondary dark:text-on-surface-variant opacity-80 hover:opacity-100 hover:text-on-background dark:hover:text-on-primary-fixed underline transition-opacity" href="#">Shipping Info</a>
+<a class="font-body-md text-body-md text-secondary dark:text-on-surface-variant opacity-80 hover:opacity-100 hover:text-on-background dark:hover:text-on-primary-fixed underline transition-opacity" href="#">Returns</a>
+</div>
+<!-- Shop Links -->
+<div class="flex flex-col gap-3">
+<h4 class="font-label-md text-label-md text-on-background dark:text-on-primary-fixed uppercase tracking-wider mb-2">Shop</h4>
+<a class="font-body-md text-body-md text-secondary dark:text-on-surface-variant opacity-80 hover:opacity-100 hover:text-on-background dark:hover:text-on-primary-fixed underline transition-opacity" href="#">All Products</a>
+<a class="font-body-md text-body-md text-secondary dark:text-on-surface-variant opacity-80 hover:opacity-100 hover:text-on-background dark:hover:text-on-primary-fixed underline transition-opacity" href="#">New Arrivals</a>
+<a class="font-body-md text-body-md text-secondary dark:text-on-surface-variant opacity-80 hover:opacity-100 hover:text-on-background dark:hover:text-on-primary-fixed underline transition-opacity" href="#">Deals</a>
+</div>
+<!-- Newsletter -->
+<div class="flex flex-col gap-4">
+<h4 class="font-label-md text-label-md text-on-background dark:text-on-primary-fixed uppercase tracking-wider mb-2">Newsletter</h4>
+<p class="font-body-md text-body-md text-secondary dark:text-on-surface-variant">Subscribe for the latest updates and exclusive deals.</p>
+<div class="flex gap-2">
+<input class="input-field h-10 min-h-[40px] text-sm bg-background" placeholder="Your email" type="email"/>
+<button class="btn-primary h-10 min-h-[40px] px-4">Join</button>
+</div>
+</div>
+<!-- Copyright -->
+<div class="col-span-1 md:col-span-4 mt-12 pt-8 border-t border-surface-variant dark:border-outline/50 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-body-md text-body-md text-secondary dark:text-on-surface-variant">© 2024 TechNova Electronics. All rights reserved.</p>
+<!-- Trust Badges -->
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined text-[20px]">lock</span>
+<span class="font-label-sm text-label-sm">Secure Checkout</span>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

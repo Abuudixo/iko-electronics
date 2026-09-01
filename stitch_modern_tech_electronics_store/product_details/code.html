@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TechNova | NovaSound Pro</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "background": "#f9f9f9",
+                    "on-primary": "#ffffff",
+                    "surface": "#f9f9f9",
+                    "on-tertiary-container": "#ffede6",
+                    "on-primary-fixed": "#00174b",
+                    "on-primary-container": "#eeefff",
+                    "error": "#ba1a1a",
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed-variant": "#474746",
+                    "surface-variant": "#e2e2e2",
+                    "primary-fixed": "#dbe1ff",
+                    "on-error": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed": "#ffdbcd",
+                    "on-surface-variant": "#434655",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "surface-dim": "#dadada",
+                    "outline": "#737686",
+                    "on-error-container": "#93000a",
+                    "surface-bright": "#f9f9f9",
+                    "on-background": "#1a1c1c",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "surface-container-highest": "#e2e2e2",
+                    "surface-container-low": "#f3f3f3",
+                    "inverse-on-surface": "#f0f1f1",
+                    "surface-tint": "#0053db",
+                    "secondary": "#5f5e5e",
+                    "surface-container": "#eeeeee",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "inverse-primary": "#b4c5ff",
+                    "primary": "#004ac6",
+                    "on-tertiary-fixed-variant": "#7d2d00",
+                    "on-secondary": "#ffffff",
+                    "primary-container": "#2563eb",
+                    "on-tertiary-fixed": "#360f00",
+                    "tertiary-fixed-dim": "#ffb596",
+                    "outline-variant": "#c3c6d7",
+                    "on-secondary-container": "#636262",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "on-surface": "#1a1c1c",
+                    "inverse-surface": "#2f3131",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-high": "#e8e8e8",
+                    "secondary-container": "#e2dfde",
+                    "tertiary-container": "#bc4800",
+                    "secondary-fixed": "#e5e2e1",
+                    "tertiary": "#943700"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "gutter": "24px",
+                    "section-padding": "80px",
+                    "container-max-width": "1280px",
+                    "stack-md": "16px",
+                    "margin-desktop": "32px",
+                    "stack-sm": "8px",
+                    "stack-lg": "32px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "label-md": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "headline-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased selection:bg-primary-container selection:text-on-primary-container min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="bg-surface/80 dark:bg-background/80 backdrop-blur-md fixed top-0 w-full z-50 shadow-sm">
+<div class="flex items-center justify-between px-margin-desktop h-20 max-w-container-max-width mx-auto border-b border-outline-variant/30 dark:border-outline/20 md:border-b-0">
+<div class="flex items-center gap-6 md:gap-12">
+<a class="font-headline-md text-headline-md font-bold text-on-background dark:text-on-primary-fixed" href="#">TechNova</a>
+<nav class="hidden md:flex gap-8">
+<a class="text-secondary dark:text-on-surface-variant font-body-md text-body-md hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">Home</a>
+<a class="text-primary dark:text-primary-fixed font-semibold border-b-2 border-primary font-body-md text-body-md hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">Shop</a>
+<a class="text-secondary dark:text-on-surface-variant font-body-md text-body-md hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">Categories</a>
+<a class="text-secondary dark:text-on-surface-variant font-body-md text-body-md hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">Deals</a>
+<a class="text-secondary dark:text-on-surface-variant font-body-md text-body-md hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">About</a>
+<a class="text-secondary dark:text-on-surface-variant font-body-md text-body-md hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">Contact</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex items-center bg-surface-container-low rounded-full px-4 py-2 border border-outline-variant">
+<span class="material-symbols-outlined text-on-surface-variant mr-2 text-[20px]" data-icon="search">search</span>
+<input class="bg-transparent border-none outline-none text-body-md font-body-md w-48 text-on-surface placeholder:text-outline focus:ring-0" placeholder="Search products..." type="text"/>
+</div>
+<button class="text-primary dark:text-primary-fixed scale-95 active:scale-90 transition-transform p-2 rounded-full hover:bg-surface-container-low md:hidden">
+<span class="material-symbols-outlined text-[24px]" data-icon="search">search</span>
+</button>
+<button class="text-primary dark:text-primary-fixed scale-95 active:scale-90 transition-transform p-2 rounded-full hover:bg-surface-container-low">
+<span class="material-symbols-outlined text-[24px]" data-icon="person">person</span>
+</button>
+<button class="text-primary dark:text-primary-fixed scale-95 active:scale-90 transition-transform p-2 rounded-full hover:bg-surface-container-low relative">
+<span class="material-symbols-outlined text-[24px]" data-icon="shopping_cart">shopping_cart</span>
+<span class="absolute top-1 right-1 bg-error text-on-error rounded-full w-4 h-4 flex items-center justify-center text-[10px] font-bold">2</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow pt-[104px] pb-section-padding px-margin-mobile md:px-margin-desktop max-w-container-max-width mx-auto w-full">
+<!-- Breadcrumbs -->
+<nav class="flex text-label-md font-label-md text-secondary mb-8 gap-2 items-center">
+<a class="hover:text-primary transition-colors" href="#">Shop</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Audio</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-on-background">Headphones</span>
+</nav>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter lg:gap-[64px] mb-section-padding">
+<!-- Image Gallery -->
+<div class="flex flex-col gap-4">
+<div class="w-full aspect-square bg-surface-container-lowest rounded-[16px] shadow-[0px_4px_20px_rgba(0,0,0,0.05)] overflow-hidden relative group">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="High-quality, studio-lit photograph of premium, sleek over-ear wireless headphones in matte charcoal grey. They are presented against a pure white background to emphasize a modern, professional, and sophisticated consumer electronics aesthetic. The lighting highlights the smooth curves and premium materials like brushed metal accents and plush leather earcups. Clean, minimalist presentation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsoPIFkVJQ0f8bC_jK1Lv1ULj8Jo_YXrg23SVeegs3SJtmFI09MiqP9mpIrX5dCi7TjXVSAEJM8wUaOAeWqaD6imi4Tz226xNFzEssohymcoG8D7kKMO_GNFTLb_20zpErNqq14cfZO5AL4wp1Fh8H11g2VrO6fEA5igy3LgxK7a_iKlhdrdv6SVwM6a1d9LAYExAhuTekivn_bNmYn-0LmWJPMySs8DqpyPi-E2QtGA-_WPqIzxNb"/>
+<div class="absolute top-4 left-4 bg-tertiary-container text-on-tertiary-container px-3 py-1 rounded-full font-label-sm text-label-sm shadow-sm">
+                        Save $50
+                    </div>
+</div>
+<div class="grid grid-cols-4 gap-4">
+<button class="aspect-square bg-surface-container-lowest rounded-lg border-2 border-primary overflow-hidden shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Close-up side view of premium wireless headphones on a clean white background. Modern, corporate aesthetic with soft ambient lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZghNDWkmfLyBpkBIuvb1-V-kYzv8vnVTRlThmgqYraZYblcP5mfyVKJo2bxWXloYTmXrE3G57eaLEXQdR_Qh5g1oAPTqRT-gt_XPwQ2b7qUxWt4ppNm7OOsKoKME4CwZUubXtfaJmvGu9nEbJhcRhPmWkgE6gPeqwICpr1epZGRF8f1Kzn2xe_fVkM5J-y59rtJJX_H5Fl41QkIun9mcGoOpbPtpjgXwFwbo4hXYrPlXoaFv7J628"/>
+</button>
+<button class="aspect-square bg-surface-container-lowest rounded-lg border border-outline-variant hover:border-primary/50 transition-colors overflow-hidden shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Detailed macro shot of the premium leather earcup of wireless headphones. Pure white background, emphasizing high-end materials." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBtMjohQPsKzt5SBVxvoU4VBTauurX1zEqwaaD60GFhM_FDaWoVsbVNmzLIHy5PbtFaCKQGbUnWhK8VOYFDeOWW1PYRobw-5LDoFNXGFQ8-azrkF4SiZk3n96cuTOM4z98YbEM4ENuhyFiF2OcIbm-3UeN-iRft_Kbb1sPg61BpMtxEyckrhtkjc8I93Ui3s3lokw04F-54FMTPjV9pgSEbh30ay76_UyU6t-hcMud2Y6aTnrOkfOT"/>
+</button>
+<button class="aspect-square bg-surface-container-lowest rounded-lg border border-outline-variant hover:border-primary/50 transition-colors overflow-hidden shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Detailed shot of the brushed metal headband and hinges of premium wireless headphones. Crisp white background, professional lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIjRgvdYVoXt2_6L3o932b_WiQCfUahfiLPOv4P0vBFLTeGir1fQrvYJExLy8E0mhGdhKrFv7lHJ6XKAItOQ5IzsjofcjWmQlt5LSVTuvoErWWZ2z1V_1t0gUh_5PsNyuaZ5r4jP3R4iqQFozHvoy_-eT9-ZWuf7P36tHj603CsJI6LqPQ-BJ13k7M6F4OFvMI_THHLeB2AVaFtyz4b_qhFIVrPoU1Rq0wsPF_RoKExVyJ3jOtbk5l"/>
+</button>
+<button class="aspect-square bg-surface-container-lowest rounded-lg border border-outline-variant hover:border-primary/50 transition-colors overflow-hidden shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Lifestyle shot showing the wireless headphones folded neatly in their premium carrying case. Clean, minimalist modern aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6zWgSisUAh4V2iyXa5wCTiLdJHcINhnqKYdv9vkAGwOmfEeN8_L9DumeEwtbc36ukB1PR7Jj-IK0lGi0QInVRi4eHIvf79SuXSDJ96R6grWaq651MfJohVxwX1VauurPJxh0tN-Sx2eruiGuEHvBEsY8h0m1Wac7dne76NYARoC7gyhYzfTnP-_MPccr-VPRILGeUnovv6z87O4ZCmRi3Wq9TsThC7w_FCvEvuNzwLTQkFLo9K80Z"/>
+</button>
+</div>
+</div>
+<!-- Product Info -->
+<div class="flex flex-col">
+<div class="mb-6">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-background mb-2">NovaSound Pro Wireless Headphones</h1>
+<div class="flex items-center gap-4 mb-4">
+<div class="flex text-primary">
+<span class="material-symbols-outlined filled text-[20px]" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined filled text-[20px]" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined filled text-[20px]" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined filled text-[20px]" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined filled text-[20px]" data-icon="star" data-weight="fill">star</span>
+</div>
+<a class="text-label-md font-label-md text-secondary hover:text-primary underline" href="#reviews">128 Reviews</a>
+</div>
+<div class="flex items-end gap-3">
+<span class="font-display-lg text-display-lg text-on-background">$199.99</span>
+<span class="font-headline-md text-headline-md text-outline line-through mb-1">$249.99</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 leading-relaxed">
+                    Experience unparalleled audio clarity with the NovaSound Pro. Featuring next-generation adaptive noise cancellation and spatial audio processing, these headphones deliver studio-quality sound in a lightweight, premium design built for all-day comfort.
+                </p>
+<!-- Key Specs Chips -->
+<div class="flex flex-wrap gap-3 mb-8">
+<div class="flex items-center gap-2 bg-surface-container-low border border-outline-variant rounded-full px-4 py-2">
+<span class="material-symbols-outlined text-primary text-[18px]" data-icon="noise_control_off">noise_control_off</span>
+<span class="font-label-sm text-label-sm text-on-surface">Active Noise Cancelling</span>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-low border border-outline-variant rounded-full px-4 py-2">
+<span class="material-symbols-outlined text-primary text-[18px]" data-icon="battery_charging_full">battery_charging_full</span>
+<span class="font-label-sm text-label-sm text-on-surface">40h Battery Life</span>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-low border border-outline-variant rounded-full px-4 py-2">
+<span class="material-symbols-outlined text-primary text-[18px]" data-icon="bluetooth">bluetooth</span>
+<span class="font-label-sm text-label-sm text-on-surface">Bluetooth 5.2</span>
+</div>
+</div>
+<hr class="border-outline-variant/50 mb-8"/>
+<!-- Color Selection -->
+<div class="mb-8">
+<span class="font-label-md text-label-md text-on-background block mb-3">Color: <span class="font-normal text-secondary">Matte Charcoal</span></span>
+<div class="flex gap-4">
+<button class="w-10 h-10 rounded-full bg-on-background border-2 border-primary ring-2 ring-primary/20"></button>
+<button class="w-10 h-10 rounded-full bg-surface-container border border-outline-variant hover:border-primary/50 transition-colors"></button>
+<button class="w-10 h-10 rounded-full bg-[#1a365d] border border-outline-variant hover:border-primary/50 transition-colors"></button>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex flex-col sm:flex-row gap-4 mb-8">
+<!-- Quantity -->
+<div class="flex items-center border border-outline-variant rounded-lg h-12 bg-surface-container-lowest shadow-sm w-full sm:w-auto">
+<button class="px-4 text-secondary hover:text-primary transition-colors h-full flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]" data-icon="remove">remove</span>
+</button>
+<input class="w-12 text-center font-body-md text-body-md border-none focus:ring-0 p-0 bg-transparent text-on-background" min="1" type="number" value="1"/>
+<button class="px-4 text-secondary hover:text-primary transition-colors h-full flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]" data-icon="add">add</span>
+</button>
+</div>
+<button class="flex-1 bg-surface-container-lowest border border-on-background text-on-background hover:bg-surface-container-low transition-colors rounded-lg font-label-md text-label-md h-12 flex items-center justify-center shadow-sm">
+                        Add to Cart
+                    </button>
+<button class="flex-1 bg-primary text-on-primary hover:bg-primary-container hover:text-on-primary-container transition-colors rounded-lg font-label-md text-label-md h-12 flex items-center justify-center shadow-sm">
+                        Buy Now
+                    </button>
+</div>
+<!-- Trust Badges -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-auto p-4 bg-surface-container-lowest rounded-xl shadow-[0px_4px_20px_rgba(0,0,0,0.02)] border border-outline-variant/30">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[24px]" data-icon="local_shipping">local_shipping</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-background">Free Shipping</span>
+<span class="font-label-sm text-label-sm text-secondary">On orders over $50</span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[24px]" data-icon="verified_user">verified_user</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-background">2 Year Warranty</span>
+<span class="font-label-sm text-label-sm text-secondary">Parts &amp; labor included</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Related Products Section -->
+<section class="mt-16">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-background mb-8">You Might Also Like</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Product Card 1 -->
+<div class="bg-surface-container-lowest rounded-[16px] shadow-[0px_4px_20px_rgba(0,0,0,0.05)] hover:shadow-[0px_8px_30px_rgba(0,0,0,0.08)] transition-shadow p-4 flex flex-col group border border-outline-variant/20">
+<div class="aspect-square bg-surface-container-low rounded-lg mb-4 overflow-hidden relative">
+<img class="w-full h-full object-cover mix-blend-multiply group-hover:scale-105 transition-transform duration-500" data-alt="Compact, true wireless earbuds resting on their charging case. Clean white background, studio lighting emphasizing the sleek, modern design and glossy finish of the electronics." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1YpGIGTfu179CeQd1V-ojNG042vob_4mR9i0kKnmCbjLvd_H7msoC7J3r4umcdZNpjw6gC3CfqLRAU4d0nPeMxXxz8CfCk4Fr_Bzy8bOzAtbouZiONxgnXXNn9VmfyxGHdEnMy6sOv1PCsh2JpEw-lnx9BbVnrBEgryu0fAe1AfVTgnCU3FI9tCtUwNqSCTQAiSrioODmLqgKUjwNwrvY96iQ6gLXbGdheMgEqt94aJ2-b6gkAd09"/>
+<div class="absolute top-2 left-2 bg-primary text-on-primary px-2 py-0.5 rounded-full font-label-sm text-label-sm">
+                            New
+                        </div>
+</div>
+<div class="flex flex-col flex-grow">
+<h3 class="font-body-lg text-body-lg text-on-background font-medium mb-1">NovaBuds Air</h3>
+<div class="flex items-center gap-1 mb-2 text-primary">
+<span class="material-symbols-outlined filled text-[16px]" data-icon="star" data-weight="fill">star</span>
+<span class="font-label-sm text-label-sm text-secondary ml-1">4.8 (84)</span>
+</div>
+<p class="font-headline-md text-headline-md text-on-background mt-auto">$129.99</p>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="bg-surface-container-lowest rounded-[16px] shadow-[0px_4px_20px_rgba(0,0,0,0.05)] hover:shadow-[0px_8px_30px_rgba(0,0,0,0.08)] transition-shadow p-4 flex flex-col group border border-outline-variant/20">
+<div class="aspect-square bg-surface-container-low rounded-lg mb-4 overflow-hidden relative">
+<img class="w-full h-full object-cover mix-blend-multiply group-hover:scale-105 transition-transform duration-500" data-alt="A sleek, cylindrical portable bluetooth speaker in a matte black finish. Presented on a crisp white background with soft, professional ambient shadows. Premium electronics aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7SrtL5QSF2YfaTRN6UjfWS6gLXSc5hyeRrGcp5Mwj_y_fn82wPdLz1nsYPQhZONICXIQvTLqOGf7Rz_8ytvE36SnCysH2fxrmDnvj6GSYVkUTNcHvtU3I8uTU04l7a2Zb9O2fhXxYnQglwTlVj858Hk1JK_nP8j3AFdjplkKEu-st31EHJkvDefqGeV3Rh3wGTyd4fb51NpxGHHsqtMqUhd2LT0_xw1oH_0zM3cGWIXJWDaxWCgG6"/>
+</div>
+<div class="flex flex-col flex-grow">
+<h3 class="font-body-lg text-body-lg text-on-background font-medium mb-1">SonicBoom Portable</h3>
+<div class="flex items-center gap-1 mb-2 text-primary">
+<span class="material-symbols-outlined filled text-[16px]" data-icon="star" data-weight="fill">star</span>
+<span class="font-label-sm text-label-sm text-secondary ml-1">4.6 (152)</span>
+</div>
+<p class="font-headline-md text-headline-md text-on-background mt-auto">$89.99</p>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="bg-surface-container-lowest rounded-[16px] shadow-[0px_4px_20px_rgba(0,0,0,0.05)] hover:shadow-[0px_8px_30px_rgba(0,0,0,0.08)] transition-shadow p-4 flex flex-col group border border-outline-variant/20">
+<div class="aspect-square bg-surface-container-low rounded-lg mb-4 overflow-hidden relative">
+<img class="w-full h-full object-cover mix-blend-multiply group-hover:scale-105 transition-transform duration-500" data-alt="A high-end, minimalist headphone stand made of brushed aluminum and dark wood. Shown empty on a pristine white background with soft studio lighting. Corporate modern aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJLKhJdfkCGZ2XwGqQhJi248HSL2uPKAQhB5486uY2OT3AgW1aq-CZF-ZZFJUguLafcp66Ors-pVlTioOlTIxZx29deuGyXb9t3KgcPqo9jgIDMbDhXbxh9wdE-rZZOc82fBbFOH4DaCNWw5Jjn3OdcQJs5zc60j6TIfOvzRdrFX7Cfnj8XWgM1v97bQjqC9TFa1xOLa0gktS7iIp6gt7troGXGPGQYoy0YZNEJ0TyjCwgoxyAjU8p"/>
+</div>
+<div class="flex flex-col flex-grow">
+<h3 class="font-body-lg text-body-lg text-on-background font-medium mb-1">Premium Desk Stand</h3>
+<div class="flex items-center gap-1 mb-2 text-primary">
+<span class="material-symbols-outlined filled text-[16px]" data-icon="star" data-weight="fill">star</span>
+<span class="font-label-sm text-label-sm text-secondary ml-1">4.9 (42)</span>
+</div>
+<p class="font-headline-md text-headline-md text-on-background mt-auto">$49.99</p>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="bg-surface-container-lowest rounded-[16px] shadow-[0px_4px_20px_rgba(0,0,0,0.05)] hover:shadow-[0px_8px_30px_rgba(0,0,0,0.08)] transition-shadow p-4 flex flex-col group border border-outline-variant/20">
+<div class="aspect-square bg-surface-container-low rounded-lg mb-4 overflow-hidden relative">
+<img class="w-full h-full object-cover mix-blend-multiply group-hover:scale-105 transition-transform duration-500" data-alt="A smart, compact soundbar with a sophisticated fabric grill and touch controls. Clean, bright white background, professional commercial photography style for consumer electronics." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_fs8K-hJg-JC9LgWMvIB2eLbOICHeXiFLrnWFl7LNqKwmgDVLmkgnF6WANrvjozPOIzqIe6hXOl8GB1unU-I12CMrJo_4ob4E0teHVodiW1E6DpkM7Ffu3TpWMBNVKD74qdcPL4OZrfOJgnrE0w0KykBk7toL9dG66tx0DZakldXNg_twJgd_2JyFpmr9foJSL6YT6kxD1u4RyfaorI2GzBun73F_aOpoDbPi2j-jJbWVSQcF7V7k"/>
+<div class="absolute top-2 left-2 bg-tertiary-container text-on-tertiary-container px-2 py-0.5 rounded-full font-label-sm text-label-sm">
+                            Sale
+                        </div>
+</div>
+<div class="flex flex-col flex-grow">
+<h3 class="font-body-lg text-body-lg text-on-background font-medium mb-1">NovaBar Mini</h3>
+<div class="flex items-center gap-1 mb-2 text-primary">
+<span class="material-symbols-outlined filled text-[16px]" data-icon="star" data-weight="fill">star</span>
+<span class="font-label-sm text-label-sm text-secondary ml-1">4.7 (210)</span>
+</div>
+<div class="flex items-end gap-2 mt-auto">
+<p class="font-headline-md text-headline-md text-on-background">$149.99</p>
+<p class="font-body-md text-body-md text-outline line-through mb-0.5">$199.99</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-surface-dim w-full py-section-padding border-t border-outline-variant dark:border-outline mt-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max-width mx-auto">
+<div class="flex flex-col gap-4">
+<span class="font-headline-md text-headline-md font-bold text-on-surface dark:text-on-primary-fixed">TechNova</span>
+<p class="font-body-md text-body-md text-secondary dark:text-on-surface-variant max-w-xs">Elevating your digital lifestyle with premium electronics and unparalleled service.</p>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-label-md text-label-md text-on-background uppercase">Company</h4>
+<a class="font-body-md text-body-md text-secondary dark:text-on-surface-variant hover:text-on-background dark:hover:text-on-primary-fixed underline transition-opacity opacity-80 hover:opacity-100" href="#">About Us</a>
+<a class="font-body-md text-body-md text-secondary dark:text-on-surface-variant hover:text-on-background dark:hover:text-on-primary-fixed underline transition-opacity opacity-80 hover:opacity-100" href="#">Careers</a>
+<a class="font-body-md text-body-md text-secondary dark:text-on-surface-variant hover:text-on-background dark:hover:text-on-primary-fixed underline transition-opacity opacity-80 hover:opacity-100" href="#">Contact</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-label-md text-label-md text-on-background uppercase">Support</h4>
+<a class="font-body-md text-body-md text-secondary dark:text-on-surface-variant hover:text-on-background dark:hover:text-on-primary-fixed underline transition-opacity opacity-80 hover:opacity-100" href="#">Shipping Info</a>
+<a class="font-body-md text-body-md text-secondary dark:text-on-surface-variant hover:text-on-background dark:hover:text-on-primary-fixed underline transition-opacity opacity-80 hover:opacity-100" href="#">Returns</a>
+<a class="font-body-md text-body-md text-secondary dark:text-on-surface-variant hover:text-on-background dark:hover:text-on-primary-fixed underline transition-opacity opacity-80 hover:opacity-100" href="#">FAQ</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-label-md text-label-md text-on-background uppercase">Legal</h4>
+<a class="font-body-md text-body-md text-secondary dark:text-on-surface-variant hover:text-on-background dark:hover:text-on-primary-fixed underline transition-opacity opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-secondary dark:text-on-surface-variant hover:text-on-background dark:hover:text-on-primary-fixed underline transition-opacity opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-secondary dark:text-on-surface-variant hover:text-on-background dark:hover:text-on-primary-fixed underline transition-opacity opacity-80 hover:opacity-100" href="#">Cookie Policy</a>
+</div>
+</div>
+<div class="px-margin-desktop max-w-container-max-width mx-auto mt-12 pt-8 border-t border-outline-variant/30 text-center">
+<p class="font-body-md text-body-md text-secondary dark:text-on-surface-variant">© 2024 TechNova Electronics. All rights reserved.</p>
+</div>
+</footer>
+</body></html>

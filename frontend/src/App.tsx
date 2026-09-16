@@ -8,6 +8,9 @@ import ProductPage from "@/pages/ProductPage";
 import CheckoutPage from "@/pages/CheckoutPage";
 import OrderConfirmedPage from "@/pages/OrderConfirmedPage";
 import DealsPage from "@/pages/DealsPage";
+import AboutPage from "@/pages/AboutPage";
+import ContactPage from "@/pages/ContactPage";
+import AccountPage from "@/pages/AccountPage";
 import PlaceholderPage from "@/pages/PlaceholderPage";
 import NotFoundPage from "@/pages/NotFoundPage";
 
@@ -24,10 +27,10 @@ export default function App() {
           <Route path="/order-confirmed" element={<OrderConfirmedPage />} />
           <Route path="/deals" element={<DealsPage />} />
 
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/account" element={<AccountPage />} />
           {/* Content pages, stubbed so no navigation link 404s today. */}
-          <Route path="/about" element={<PlaceholderPage title="About IKO" />} />
-          <Route path="/contact" element={<PlaceholderPage title="Contact" />} />
-          <Route path="/account" element={<PlaceholderPage title="Your Account" />} />
           <Route path="/shipping" element={<PlaceholderPage title="Shipping Info" />} />
           <Route path="/returns" element={<PlaceholderPage title="Returns" />} />
           <Route path="/privacy" element={<PlaceholderPage title="Privacy Policy" />} />

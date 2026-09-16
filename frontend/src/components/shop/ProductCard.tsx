@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ShoppingCart } from "lucide-react";
+import { Heart, ShoppingCart } from "lucide-react";
 import type { Product } from "@/types/catalog";
 import { discountPercent, isOnSale } from "@/types/catalog";
 import { useCart } from "@/context/CartContext";
@@ -13,9 +13,17 @@ export default function ProductCard({ product }: { product: Product }) {
   const off = discountPercent(product);
 
   return (
-    <article className="group relative flex flex-col overflow-hidden rounded-lg bg-surface-lowest shadow-card transition-shadow hover:shadow-card-hover">
-      <div className="relative aspect-square bg-surface-low p-4">
-        <ProductImage product={product} />
+    <article className="group relative flex h-full flex-col overflow-hidden rounded-xl border border-outline-variant/80 bg-surface-lowest shadow-[0_8px_22px_rgba(17,24,39,0.04)] transition-all hover:-translate-y-1 hover:shadow-[0_14px_30px_rgba(17,24,39,0.08)]">
+      <div className="relative aspect-[1.08] overflow-hidden bg-[#edf3ff] p-2.5 sm:aspect-square sm:p-4">
+        <ProductImage product={product} className="rounded-[0.8rem]" />
+
+        <button
+          type="button"
+          aria-label={`Add ${product.name} to favourites`}
+          className="relative z-10 absolute right-3 top-3 grid size-10 place-items-center rounded-full bg-surface-lowest text-primary shadow-sm transition-colors hover:bg-primary-container"
+        >
+          <Heart aria-hidden="true" className="size-5" />
+        </button>
 
         <div className="absolute left-3 top-3 flex flex-col items-start gap-1.5">
           {isOnSale(product) && <Badge tone="sale">{off}% off</Badge>}
@@ -24,36 +32,27 @@ export default function ProductCard({ product }: { product: Product }) {
         </div>
       </div>
 
-      <div className="flex flex-1 flex-col gap-1.5 p-4">
+      <div className="flex flex-1 flex-col gap-1.5 p-3 pt-3 sm:gap-2 sm:p-4 sm:pt-4">
         <p className="text-label-sm uppercase text-on-surface-variant">{product.brand}</p>
 
         <h3 className="text-body-md font-semibold text-on-surface">
-          {/*
-            Stretched link: the whole card is clickable, but only the title is
-            in the tab order and read as the link — so a screen reader announces
-            the product name, not "link, link, link" for image, title and card.
-          */}
           <Link to={`/product/${product.slug}`} className="after:absolute after:inset-0">
             {product.name}
           </Link>
         </h3>
 
-        <div className="mt-auto flex items-end justify-between gap-3 pt-3">
+        <div className="mt-auto flex flex-col items-stretch gap-3 pt-2">
           <Price price={product.price} compareAtPrice={product.compareAtPrice} size="sm" />
 
-          {/*
-            Sits above the stretched link so it stays independently clickable.
-            Quick-add always adds one of the default option; anything with a
-            real choice to make sends you to the product page instead.
-          */}
           <button
             type="button"
             disabled={soldOut}
             onClick={() => add(product, product.options?.[0] ?? null, 1)}
             aria-label={soldOut ? `${product.name} is out of stock` : `Add ${product.name} to cart`}
-            className="relative z-10 grid size-11 shrink-0 place-items-center rounded-full bg-primary text-on-primary transition-colors hover:bg-primary-hover disabled:bg-surface-container disabled:text-outline"
+            className="relative z-10 inline-flex h-11 w-full items-center justify-center gap-2 rounded bg-primary px-3 text-body-md font-semibold text-on-primary transition-colors hover:bg-primary-hover disabled:bg-surface-container disabled:text-outline"
           >
-            <ShoppingCart aria-hidden="true" className="size-5" />
+            <ShoppingCart aria-hidden="true" className="size-4" />
+            Add to cart
           </button>
         </div>
       </div>

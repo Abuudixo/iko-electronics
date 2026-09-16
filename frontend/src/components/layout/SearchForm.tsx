@@ -25,8 +25,16 @@ export default function SearchForm({
     onSubmitted?.();
   }
 
+  const [isFocused, setIsFocused] = useState(false);
+
   return (
-    <form role="search" onSubmit={handleSubmit} className={cn("relative", className)}>
+    <form
+      role="search"
+      onSubmit={handleSubmit}
+      onFocus={() => setIsFocused(true)}
+      onBlur={() => setIsFocused(false)}
+      className={cn("relative transition-[width] duration-200 ease-out", className, isFocused && "lg:w-80")}
+    >
       <label htmlFor="site-search" className="sr-only">
         Search products
       </label>

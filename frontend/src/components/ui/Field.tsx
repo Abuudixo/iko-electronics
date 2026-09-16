@@ -3,14 +3,14 @@ import type { InputHTMLAttributes, SelectHTMLAttributes, ReactNode } from "react
 import { cn } from "@/lib/utils";
 
 const CONTROL =
-  "h-12 w-full rounded border bg-surface-lowest px-4 text-body-md text-on-surface placeholder:text-on-surface-variant focus:outline-none disabled:bg-surface-container disabled:text-outline";
+  "h-12 w-full rounded-md border-2 bg-surface-lowest px-4 text-body-md text-on-surface placeholder:text-on-surface-variant shadow-sm focus:outline-none disabled:bg-surface-container disabled:text-outline";
 
 function control(hasError: boolean) {
   return cn(
     CONTROL,
     hasError
       ? "border-error focus:border-error"
-      : "border-outline-variant focus:border-primary",
+      : "border-[#b5b1c7] focus:border-2 focus:border-primary",
   );
 }
 
@@ -32,7 +32,7 @@ function Wrapper({
 }: Common & { id: string; children: ReactNode }) {
   return (
     <div className="flex flex-col gap-1.5">
-      <label htmlFor={id} className={cn("text-label-sm text-on-surface-variant", hideLabel && "sr-only")}>
+      <label htmlFor={id} className={cn("text-label-sm font-semibold text-black", hideLabel && "sr-only")}>
         {label}
       </label>
       {children}

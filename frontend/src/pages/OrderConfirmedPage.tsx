@@ -1,5 +1,5 @@
-import { Link, useLocation } from "react-router-dom";
-import { CheckCircle2, Package, Phone } from "lucide-react";
+import { useLocation } from "react-router-dom";
+import { Check, MessageCircle } from "lucide-react";
 import { formatPrice } from "@/lib/utils";
 import Button from "@/components/ui/Button";
 
@@ -7,6 +7,7 @@ type OrderState = {
   reference: string;
   total: number;
   method: string;
+  delivery?: string;
   phone: string;
   itemCount: number;
 };
@@ -29,66 +30,47 @@ export default function OrderConfirmedPage() {
     );
   }
 
-  const isCash = state.method.toLowerCase().includes("cash");
-
   return (
-    <div className="mx-auto max-w-2xl px-4 py-16 md:px-8 md:py-24">
-      <div className="flex flex-col items-center text-center">
-        <CheckCircle2 aria-hidden="true" strokeWidth={1.5} className="size-16 text-success" />
-        <h1 className="mt-5 text-headline-lg-responsive">Order placed</h1>
-        <p className="mt-3 max-w-prose text-body-lg text-on-surface-variant">
-          {isCash
-            ? "We will call you shortly to confirm delivery. Pay the driver on arrival."
-            : `Approve the payment prompt sent to ${state.phone} to complete your order.`}
-        </p>
-      </div>
+    <div className="bg-[#f8f7fc] px-4 py-8 md:py-12">
+      <div className="mx-auto max-w-xl rounded-2xl border border-[#e5e0ef] bg-surface-lowest p-6 text-center md:p-8">
+        <div className="mx-auto grid size-20 place-items-center rounded-full bg-primary-container text-primary">
+          <Check aria-hidden="true" className="size-10" strokeWidth={3} />
+        </div>
+        <h1 className="mt-6 text-2xl font-bold tracking-tight text-on-surface">Thank You for Your Order!</h1>
+        <p className="mt-2 text-body-lg text-on-surface-variant">Your order has been received successfully.</p>
 
-      <dl className="mt-10 overflow-hidden rounded-lg border border-outline-variant">
+      <dl className="mt-6 rounded-xl bg-[#f8f7fc] p-4 text-left">
         {[
-          { label: "Order reference", value: state.reference },
-          { label: "Items", value: `${state.itemCount} ${state.itemCount === 1 ? "item" : "items"}` },
-          { label: "Payment method", value: state.method },
-          { label: "Total", value: formatPrice(state.total) },
+          { label: "Order Number", value: state.reference },
+          { label: "Name", value: "Guest Customer" },
+          { label: "WhatsApp", value: state.phone },
+          { label: "Payment", value: state.method },
+          { label: "Delivery", value: state.delivery ?? "Home Delivery" },
         ].map(({ label, value }) => (
           <div
             key={label}
-            className="flex flex-wrap justify-between gap-2 border-b border-outline-variant px-5 py-4 last:border-b-0"
+            className="flex flex-wrap justify-between gap-2 py-1.5"
           >
             <dt className="text-body-md text-on-surface-variant">{label}</dt>
             <dd className="text-body-md font-semibold tabular-nums">{value}</dd>
           </div>
         ))}
+        <div className="mt-2 flex justify-between gap-2 border-t border-outline-variant pt-3">
+          <dt className="text-body-md font-bold text-on-surface">Total Paid</dt>
+          <dd className="text-body-md font-bold tabular-nums text-on-surface">{formatPrice(state.total)}</dd>
+        </div>
       </dl>
 
-      <div className="mt-8 grid gap-4 sm:grid-cols-2">
-        <div className="flex gap-3 rounded-lg bg-surface-lowest p-5 shadow-card">
-          <Package aria-hidden="true" strokeWidth={1.5} className="size-5 shrink-0 text-primary" />
-          <div>
-            <h2 className="text-label-md">What happens next</h2>
-            <p className="mt-1 text-body-md text-on-surface-variant">
-              We pack your order and dispatch it. Same-day if you ordered before 3pm.
-            </p>
-          </div>
-        </div>
-        <div className="flex gap-3 rounded-lg bg-surface-lowest p-5 shadow-card">
-          <Phone aria-hidden="true" strokeWidth={1.5} className="size-5 shrink-0 text-primary" />
-          <div>
-            <h2 className="text-label-md">Need to change something?</h2>
-            <p className="mt-1 text-body-md text-on-surface-variant">
-              Quote <strong className="text-on-surface">{state.reference}</strong> and{" "}
-              <Link to="/contact" className="text-primary hover:underline">
-                contact us
-              </Link>{" "}
-              as soon as you can.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div className="mt-10 flex justify-center">
-        <Button to="/shop" size="lg" variant="secondary">
-          Continue shopping
-        </Button>
+      <a
+        href="https://wa.me/252600000000"
+        className="mt-6 inline-flex h-12 w-full items-center justify-center gap-2 rounded-lg bg-[#22c968] px-4 text-label-md text-white transition-colors hover:bg-[#1eaf5b]"
+      >
+        <MessageCircle aria-hidden="true" className="size-5" />
+        Contact Us on WhatsApp
+      </a>
+      <Button to="/shop" size="md" variant="secondary" fullWidth className="mt-3">
+        Continue Shopping
+      </Button>
       </div>
     </div>
   );

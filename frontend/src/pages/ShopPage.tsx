@@ -7,7 +7,7 @@ import { formatPrice } from "@/lib/utils";
 import ProductCard from "@/components/shop/ProductCard";
 import Button from "@/components/ui/Button";
 
-const PER_PAGE = 8;
+const PER_PAGE = 12;
 const PRICE_STEPS = [0, 5000, 15000, 50000, 150000] as const;
 
 function sortProducts(list: Product[], key: SortKey): Product[] {
@@ -171,17 +171,19 @@ export default function ShopPage() {
   );
 
   return (
-    <div className="mx-auto max-w-(--container-page) px-4 py-10 md:px-8">
+    <div className="mx-auto max-w-(--container-page) px-4 py-8 md:px-8 lg:py-10">
       <h1 className="text-headline-lg-responsive">
         {query ? `Results for “${query}”` : category
           ? CATEGORIES.find((c) => c.slug === category)?.label ?? "Shop"
           : "All products"}
       </h1>
 
-      <div className="mt-8 flex gap-10">
-        <aside className="hidden w-60 shrink-0 lg:block">
-          <h2 className="mb-6 text-headline-md">Filters</h2>
+      <div className="mt-7 flex gap-8 xl:gap-10">
+        <aside className="hidden w-60 shrink-0 md:block">
+          <div className="rounded-xl border border-outline-variant/70 bg-surface-lowest p-5">
+            <h2 className="mb-6 text-headline-md">Category</h2>
           {filterPanel}
+          </div>
         </aside>
 
         <div className="min-w-0 flex-1">
@@ -201,7 +203,7 @@ export default function ShopPage() {
                 ref={filterButtonRef}
                 type="button"
                 onClick={() => setFiltersOpen(true)}
-                className="inline-flex h-11 items-center gap-2 rounded border border-outline-variant px-4 text-body-md lg:hidden"
+                className="inline-flex h-11 items-center gap-2 rounded border border-outline-variant px-4 text-body-md md:hidden"
               >
                 <SlidersHorizontal aria-hidden="true" className="size-4" />
                 Filters
@@ -240,7 +242,7 @@ export default function ShopPage() {
               </Button>
             </div>
           ) : (
-            <ul className="mt-6 grid grid-cols-2 gap-6 lg:grid-cols-3">
+            <ul className="mt-6 grid grid-cols-2 gap-5 lg:grid-cols-3 xl:grid-cols-4">
               {visible.map((product) => (
                 <li key={product.id}>
                   <ProductCard product={product} />
@@ -273,7 +275,7 @@ export default function ShopPage() {
 
       {/* ---------- Mobile filter drawer ---------- */}
       {filtersOpen && (
-        <div className="lg:hidden">
+        <div className="md:hidden">
           <div
             aria-hidden="true"
             onClick={() => setFiltersOpen(false)}

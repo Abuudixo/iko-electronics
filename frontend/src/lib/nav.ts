@@ -9,9 +9,7 @@
 export type NavLink = { label: string; to: string };
 
 export const PRIMARY_NAV: NavLink[] = [
-  { label: "Home", to: "/" },
   { label: "Shop", to: "/shop" },
-  { label: "Deals", to: "/deals" },
   { label: "About", to: "/about" },
   { label: "Contact", to: "/contact" },
 ];

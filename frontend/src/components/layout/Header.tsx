@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { NavLink, Link } from "react-router-dom";
-import { Menu, ShoppingCart, User } from "lucide-react";
+import { MessageCircle, Menu, ShoppingCart, User, Zap } from "lucide-react";
 import { PRIMARY_NAV } from "@/lib/nav";
 import { useCart } from "@/context/CartContext";
 import Logo from "./Logo";
@@ -15,10 +15,22 @@ export default function Header() {
   return (
     <>
       <header className="sticky top-0 z-30 border-b border-outline-variant bg-surface/80 backdrop-blur-md">
+        <div className="flex min-h-12 items-center justify-center gap-3 bg-inverse-surface px-4 py-2 text-center text-label-md text-inverse-on-surface">
+          <span className="inline-flex items-center gap-2">
+            <Zap aria-hidden="true" className="size-4 fill-[#ff9f43] text-[#ff9f43]" />
+            <span>Fast Delivery Across Mogadishu</span>
+          </span>
+          <span aria-hidden="true" className="text-inverse-primary">|</span>
+          <Link to="/contact" className="inline-flex items-center gap-2 transition-colors hover:text-inverse-primary">
+            <MessageCircle aria-hidden="true" className="size-5 text-[#00c875]" />
+            <span>Contact Us on WhatsApp</span>
+          </Link>
+        </div>
+
         <div className="mx-auto flex h-20 max-w-(--container-page) items-center gap-4 px-4 md:px-8">
           <Logo />
 
-          <nav aria-label="Main" className="hidden items-center gap-6 md:flex">
+          <nav aria-label="Main" className="ml-[88px] hidden items-center gap-4 lg:flex">
             {PRIMARY_NAV.map(({ label, to }) => (
               <NavLink
                 key={to}
@@ -26,10 +38,10 @@ export default function Header() {
                 end={to === "/"}
                 className={({ isActive }) =>
                   [
-                    "border-b-2 pb-1 text-body-md transition-colors",
+                    "rounded-md px-3 py-2 text-body-md font-bold transition-colors",
                     isActive
-                      ? "border-primary font-semibold text-primary"
-                      : "border-transparent text-on-surface-variant hover:text-primary",
+                      ? "bg-primary-container text-on-primary-container"
+                      : "text-on-surface-variant hover:bg-surface-container hover:text-primary",
                   ].join(" ")
                 }
               >
@@ -79,7 +91,7 @@ export default function Header() {
               onClick={() => setMenuOpen(true)}
               aria-label="Open menu"
               aria-expanded={menuOpen}
-              className="grid size-11 place-items-center rounded-full text-on-surface hover:bg-surface-container md:hidden"
+              className="grid size-11 place-items-center rounded-full text-on-surface hover:bg-surface-container lg:hidden"
             >
               <Menu aria-hidden="true" className="size-6" />
             </button>

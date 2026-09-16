@@ -10,7 +10,10 @@
     "typecheck": "tsc -b --noEmit"
   },
   "dependencies": {
+    "@radix-ui/react-dialog": "^1.1.23",
+    "@radix-ui/react-select": "^2.3.7",
     "clsx": "^2.1.1",
+    "framer-motion": "^13.2.0",
     "lucide-react": "^0.460.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

@@ -50,7 +50,7 @@ export default function MobileNav({
   if (!open) return null;
 
   return (
-    <div className="md:hidden">
+    <div className="lg:hidden">
       {/* Scrim. Not focusable — keyboard users close with Escape or the X button,
           so a full-screen button would just be a duplicate tab stop. */}
       <div

@@ -12,7 +12,7 @@ import Logo from "./Logo";
  * COMPANY/SUPPORT/LEGAL, SUPPORT/LEGAL). Consolidated into Shop / Support /
  * Company, driven by lib/nav.ts.
  *
- * Set on navy so the brand colour anchors the bottom of every page.
+ * Set on IKO navy so the footer matches the wordmark color.
  */
 export default function Footer() {
   const [email, setEmail] = useState("");
@@ -26,7 +26,7 @@ export default function Footer() {
   }
 
   return (
-    <footer className="mt-auto bg-inverse-surface text-inverse-on-surface">
+    <footer className="mt-auto bg-brand-navy text-inverse-on-surface">
       <div className="mx-auto max-w-(--container-page) px-4 py-16 md:px-8">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div className="flex flex-col gap-4">

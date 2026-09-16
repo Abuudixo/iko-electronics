@@ -12,9 +12,14 @@ export type Money = number;
 export const CATEGORIES = [
   { slug: "smartphones", label: "Smartphones" },
   { slug: "laptops", label: "Laptops" },
+  { slug: "tvs", label: "TVs" },
   { slug: "audio", label: "Audio" },
-  { slug: "wearables", label: "Wearables" },
+  { slug: "wearables", label: "Smart Watches" },
   { slug: "accessories", label: "Accessories" },
+  { slug: "home-appliances", label: "Home Appliances" },
+  { slug: "gaming", label: "Gaming" },
+  { slug: "power-charging", label: "Power & Charging" },
+  { slug: "hair-stylers", label: "Hair Stylers" },
 ] as const;
 
 export type CategorySlug = (typeof CATEGORIES)[number]["slug"];

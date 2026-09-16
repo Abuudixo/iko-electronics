@@ -1,4 +1,4 @@
-import { Headphones, Laptop, Plug, Smartphone, Watch } from "lucide-react";
+import { Gamepad2, Headphones, House, Laptop, Plug, Scissors, Smartphone, Tv, Watch, Zap } from "lucide-react";
 import type { CategorySlug, Product } from "@/types/catalog";
 import { cn } from "@/lib/utils";
 
@@ -8,6 +8,11 @@ const ICONS: Record<CategorySlug, typeof Smartphone> = {
   audio: Headphones,
   wearables: Watch,
   accessories: Plug,
+  tvs: Tv,
+  "home-appliances": House,
+  gaming: Gamepad2,
+  "power-charging": Zap,
+  "hair-stylers": Scissors,
 };
 
 /**

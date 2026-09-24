@@ -10,7 +10,7 @@ export default function Skeleton({ className }: { className?: string }) {
 
 export function ProductCardSkeleton() {
   return (
-    <div className="overflow-hidden rounded-lg bg-surface-lowest shadow-card">
+    <div className="overflow-hidden rounded-lg bg-surface-lowest">
       <Skeleton className="aspect-square rounded-none" />
       <div className="flex flex-col gap-2.5 p-4">
         <Skeleton className="h-3 w-16" />

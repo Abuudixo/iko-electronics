@@ -3,7 +3,7 @@ import type { InputHTMLAttributes, SelectHTMLAttributes, ReactNode } from "react
 import { cn } from "@/lib/utils";
 
 const CONTROL =
-  "h-12 w-full rounded-md border-2 bg-surface-lowest px-4 text-body-md text-on-surface placeholder:text-on-surface-variant shadow-sm focus:outline-none disabled:bg-surface-container disabled:text-outline";
+  "h-12 w-full rounded-md border-2 bg-surface-lowest px-4 text-body-md text-on-surface placeholder:text-on-surface-variant focus:outline-none disabled:bg-surface-container disabled:text-outline";
 
 function control(hasError: boolean) {
   return cn(

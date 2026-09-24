@@ -46,7 +46,7 @@ export default function ContactPage() {
           </p>
         </header>
 
-        <section className="rounded-[1.35rem] border border-[#e4e7ee] bg-[#f8f9fb] p-3 shadow-[0_4px_24px_rgba(14,32,67,0.05)] sm:p-4 md:p-5">
+        <section className="rounded-[1.35rem] border border-[#e4e7ee] bg-[#f8f9fb] p-3 sm:p-4 md:p-5">
           <h2 className="mb-4 text-[1.4rem] font-bold tracking-[-0.04em] text-on-surface sm:text-[1.5rem] md:text-[1.6rem]">
             Get In Touch
           </h2>
@@ -55,10 +55,10 @@ export default function ContactPage() {
             {contactDetails.map(({ icon: Icon, label, value, className }) => (
               <div
                 key={label}
-                className="flex items-center gap-2.5 rounded-lg border border-[#edf0f5] bg-white px-2.5 py-2 shadow-[0_2px_10px_rgba(14,32,67,0.03)] sm:gap-3.5 sm:px-3.5 sm:py-2.5"
+                className="flex items-center gap-2.5 rounded-lg border border-[#edf0f5] bg-white px-2.5 py-2 sm:gap-3.5 sm:px-3.5 sm:py-2.5"
               >
                 <div
-                  className={`grid size-8 shrink-0 place-items-center rounded-lg shadow-sm sm:size-11 ${className}`}
+                  className={`grid size-8 shrink-0 place-items-center rounded-lg sm:size-11 ${className}`}
                   aria-hidden="true"
                 >
                   <Icon className="size-3.5 sm:size-4.5" strokeWidth={2.2} />
@@ -71,7 +71,7 @@ export default function ContactPage() {
             ))}
           </div>
 
-          <div className="relative mt-5 overflow-hidden rounded-[1.1rem] border border-[#dfe4ed] bg-white shadow-[0_12px_30px_rgba(14,32,67,0.12)]">
+          <div className="relative mt-5 overflow-hidden rounded-[1.1rem] border border-[#dfe4ed] bg-white">
             <iframe
               title="IKO Electronics Store location"
               src="https://www.google.com/maps?q=Hamar%20Weyne%20District%2C%20Mogadishu&z=13&output=embed"

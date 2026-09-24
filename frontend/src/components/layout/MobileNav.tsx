@@ -63,7 +63,7 @@ export default function MobileNav({
         role="dialog"
         aria-modal="true"
         aria-label="Site menu"
-        className="fixed right-0 top-0 z-50 flex h-dvh w-[85%] max-w-sm flex-col bg-surface-lowest shadow-card-hover"
+        className="fixed right-0 top-0 z-50 flex h-dvh w-[85%] max-w-sm flex-col border-l border-outline-variant bg-surface-lowest"
       >
         <div className="flex h-20 items-center justify-between border-b border-outline-variant px-4">
           <span className="text-label-md uppercase text-on-surface-variant">Menu</span>

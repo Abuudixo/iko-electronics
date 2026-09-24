@@ -14,7 +14,7 @@ export default function ProductCard({ product }: { product: Product }) {
   const off = discountPercent(product);
 
   return (
-    <article className="group relative flex h-full flex-col overflow-hidden rounded-xl border border-outline-variant/80 bg-surface-lowest shadow-[0_8px_22px_rgba(17,24,39,0.04)] transition-all hover:-translate-y-1 hover:shadow-[0_14px_30px_rgba(17,24,39,0.08)]">
+    <article className="group relative flex h-full flex-col overflow-hidden rounded-xl border border-outline-variant/80 bg-surface-lowest transition-transform hover:-translate-y-1">
       <div className="relative aspect-[1.08] overflow-hidden bg-[#edf3ff] p-2.5 sm:aspect-square sm:p-4">
         <ProductImage product={product} className="rounded-[0.8rem]" />
 

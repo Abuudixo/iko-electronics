@@ -89,7 +89,7 @@ const PROMO_CARDS = [
     action: "Shop Appliances",
     to: "/shop?category=home-appliances",
     icon: Tv,
-    className: "bg-[#263b76]",
+    className: "bg-primary",
   },
   {
     eyebrow: "New collection",
@@ -98,7 +98,7 @@ const PROMO_CARDS = [
     action: "Shop Accessories",
     to: "/shop?category=accessories",
     icon: Zap,
-    className: "bg-[#763a97]",
+    className: "bg-primary-hover",
   },
 ];
 

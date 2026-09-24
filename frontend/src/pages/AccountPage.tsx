@@ -204,7 +204,7 @@ export default function AccountPage() {
         </nav>
       </div>
 
-      <div className="mt-5 rounded-[1.1rem] bg-[#25386f] px-4 py-5 text-white shadow-[0_8px_18px_rgba(37,56,111,0.18)] lg:col-start-2 lg:row-start-1 lg:mt-0 lg:px-8 lg:py-8">
+      <div className="mt-5 rounded-[1.1rem] bg-primary px-4 py-5 text-white shadow-none lg:col-start-2 lg:row-start-1 lg:mt-0 lg:px-8 lg:py-8">
         <div className="text-[0.72rem] text-white/75">Welcome back</div>
         <div className="mt-1 flex items-center gap-2 text-[1.25rem] font-black">{userName} <Hand aria-hidden="true" className="size-5 text-white/80" /></div>
         <div className="mt-1 text-[0.68rem] font-medium text-white/80">Member since July 2026</div>
@@ -239,7 +239,7 @@ export default function AccountPage() {
           )}
           {activeSection === "IKO Points" && (
             <div className="mt-4">
-              <div className="rounded-xl bg-[#713892] px-4 py-4 text-white">
+              <div className="rounded-xl bg-primary px-4 py-4 text-white">
                 <div className="text-[0.68rem] font-medium text-white/85">Your Balance</div>
                 <div className="mt-1 flex items-baseline gap-2">
                   <strong className="text-3xl leading-none">{profile.loyaltyPoints || 420}</strong>

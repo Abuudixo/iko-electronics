@@ -13,7 +13,7 @@ export default function Hero() {
       </div>
       <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-r from-[#0e2043]/85 via-[#0e2043]/35 to-transparent" />
 
-      <div className="relative mx-auto flex min-h-[25rem] max-w-(--container-page) items-center justify-center px-4 pb-8 pt-20 text-center sm:min-h-[30rem] sm:px-8 sm:pb-12 lg:min-h-[34rem] lg:justify-start lg:pb-16 lg:text-left">
+      <div className="container relative flex min-h-[25rem] items-center justify-center px-4 pb-8 pt-20 text-center sm:min-h-[30rem] sm:px-8 sm:pb-12 lg:min-h-[34rem] lg:justify-start lg:pb-16 lg:text-left">
         <div className="max-w-xl">
           <p className="text-label-md font-extrabold uppercase tracking-[0.16em] text-inverse-primary">IKO Electronics</p>
           <h1 className="mt-3 mx-auto max-w-[11ch] text-balance text-[2.35rem] font-semibold leading-[0.98] tracking-[-0.04em] text-white sm:mt-4 sm:text-5xl lg:mx-0 lg:text-[4.5rem]">

@@ -156,7 +156,7 @@ export default function CheckoutPage() {
 
   if (lines.length === 0) {
     return (
-      <div className="mx-auto flex max-w-(--container-page) flex-col items-center gap-5 px-4 py-24 text-center md:px-8">
+      <div className="container flex flex-col items-center gap-5 px-4 py-24 text-center md:px-8">
         <ShoppingBag aria-hidden="true" strokeWidth={1.25} className="size-14 text-outline-variant" />
         <h1 className="text-headline-lg-responsive">Your cart is empty</h1>
         <p className="max-w-prose text-body-lg text-on-surface-variant">

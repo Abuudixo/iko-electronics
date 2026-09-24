@@ -27,7 +27,7 @@ export default function Header() {
           </Link>
         </div>
 
-        <div className="mx-auto flex h-20 max-w-(--container-page) items-center gap-4 px-4 md:px-8">
+        <div className="container flex h-20 items-center gap-4 px-4 md:px-8">
           <Logo />
 
           <nav aria-label="Main" className="ml-[88px] hidden items-center gap-4 lg:flex">

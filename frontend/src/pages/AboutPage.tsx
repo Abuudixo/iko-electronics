@@ -14,7 +14,7 @@ export default function AboutPage() {
         </div>
         <div aria-hidden="true" className="absolute inset-0 bg-[#0e2043]/85" />
 
-        <div className="relative mx-auto flex min-h-[23rem] max-w-(--container-page) items-end justify-center px-4 pb-12 pt-20 text-center sm:min-h-[29rem] sm:pb-14 md:px-8 lg:min-h-[29.25rem]">
+        <div className="container relative flex min-h-[23rem] items-end justify-center px-4 pb-12 pt-20 text-center sm:min-h-[29rem] sm:pb-14 md:px-8 lg:min-h-[29.25rem]">
           <div className="max-w-5xl">
             <p className="text-label-md uppercase tracking-[0.16em] text-inverse-primary">
               About us
@@ -27,7 +27,7 @@ export default function AboutPage() {
       </section>
 
       <section className="bg-surface-lowest">
-        <div className="mx-auto max-w-(--container-page) px-6 py-16 md:px-12 md:py-20">
+        <div className="container px-6 py-16 md:px-12 md:py-20">
           <p className="max-w-4xl text-body-lg leading-relaxed text-on-surface-variant sm:text-[1.5rem] sm:leading-[1.8]">
             IKO Electronics is a customer-focused electronics retailer bringing
             quality technology products and excellent service to customers
@@ -38,7 +38,7 @@ export default function AboutPage() {
       </section>
 
       <section className="bg-surface-lowest pb-16 md:pb-20">
-        <div className="mx-auto grid max-w-(--container-page) gap-4 px-6 md:grid-cols-3 md:px-12">
+        <div className="container grid gap-4 px-6 md:grid-cols-3 md:px-12">
           <article className="rounded-xl border border-primary-container bg-primary-container/25 p-5">
             <Target aria-hidden="true" className="size-8 text-primary" />
             <h2 className="mt-4 text-lg font-bold text-on-surface">Our Mission</h2>
@@ -72,7 +72,7 @@ export default function AboutPage() {
       </section>
 
       <section className="bg-surface-lowest pb-16 md:pb-20">
-        <div className="mx-auto max-w-(--container-page) px-6 md:px-12">
+        <div className="container px-6 md:px-12">
           <div className="grid max-w-4xl grid-cols-2 gap-3 sm:grid-cols-2 lg:max-w-none lg:grid-cols-4 lg:gap-4">
             {[
               ["500+", "Products Available"],

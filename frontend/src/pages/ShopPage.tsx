@@ -171,7 +171,7 @@ export default function ShopPage() {
   );
 
   return (
-    <div className="mx-auto max-w-(--container-page) px-4 py-8 md:px-8 lg:py-10">
+    <div className="container px-4 py-8 md:px-8 lg:py-10">
       <h1 className="text-headline-lg-responsive">
         {query ? `Results for “${query}”` : category
           ? CATEGORIES.find((c) => c.slug === category)?.label ?? "Shop"

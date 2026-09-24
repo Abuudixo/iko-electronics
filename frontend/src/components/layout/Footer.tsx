@@ -28,7 +28,7 @@ export default function Footer() {
 
   return (
     <footer className="mt-auto bg-brand-navy text-inverse-on-surface">
-      <div className="mx-auto max-w-(--container-page) px-4 py-16 md:px-8">
+      <div className="container px-4 py-16 md:px-8">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div className="flex flex-col gap-4">
             <Logo variant="onDark" />

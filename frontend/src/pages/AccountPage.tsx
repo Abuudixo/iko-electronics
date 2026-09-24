@@ -166,7 +166,7 @@ export default function AccountPage() {
   }
 
   return (
-    <div className="mx-auto max-w-[420px] px-4 py-5 lg:grid lg:max-w-(--container-page) lg:grid-cols-[260px_minmax(0,1fr)] lg:gap-8 lg:px-8 lg:py-8">
+    <div className="container mx-auto max-w-[420px] px-4 py-5 lg:grid lg:max-w-none lg:grid-cols-[260px_minmax(0,1fr)] lg:gap-8 lg:px-8 lg:py-8">
       <div className="rounded-[1.1rem] border border-[#e4e3eb] bg-white p-3 shadow-[0_6px_18px_rgba(17,24,39,0.04)] lg:col-start-1 lg:row-span-4">
         <div className="flex items-center gap-3 border-b border-[#eceaf0] px-1 pb-4">
           <div className="grid size-10 place-items-center rounded-full bg-[#eee7f8] text-[#4c2b77]">

@@ -10,7 +10,7 @@ const deals = PRODUCTS.filter(isOnSale).sort(
 
 export default function DealsPage() {
   return (
-    <div className="mx-auto max-w-(--container-page) px-4 py-10 md:px-8">
+    <div className="container px-4 py-10 md:px-8">
       <h1 className="text-headline-lg-responsive">Deals</h1>
       <p className="mt-2 max-w-prose text-body-lg text-on-surface-variant">
         Everything currently reduced, biggest saving first.

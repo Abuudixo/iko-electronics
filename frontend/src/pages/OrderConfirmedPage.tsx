@@ -18,7 +18,7 @@ export default function OrderConfirmedPage() {
   // Reached directly, or after a refresh — there is no order to show.
   if (!state?.reference) {
     return (
-      <div className="mx-auto flex max-w-(--container-page) flex-col items-center gap-5 px-4 py-24 text-center md:px-8">
+      <div className="container flex flex-col items-center gap-5 px-4 py-24 text-center md:px-8">
         <h1 className="text-headline-lg-responsive">No recent order</h1>
         <p className="max-w-prose text-body-lg text-on-surface-variant">
           If you have just placed one, the confirmation was sent to your phone by SMS.

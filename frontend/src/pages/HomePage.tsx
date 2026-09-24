@@ -162,7 +162,7 @@ export default function HomePage() {
       <Hero />
 
       <section className="border-y border-white/10 bg-inverse-surface text-center" aria-label="IKO store statistics">
-        <ul className="mx-auto flex max-w-(--container-page) items-center justify-between gap-2 divide-x divide-white/15 px-4 py-2 sm:gap-4 sm:px-8 sm:py-3">
+        <ul className="container flex items-center justify-between gap-2 divide-x divide-white/15 px-4 py-2 sm:gap-4 sm:px-8 sm:py-3">
           {STORE_STATS.map(({ value, label }) => (
             <li key={label} className="flex-1 px-1 sm:px-4">
               <strong className="block font-display text-base font-bold leading-none text-white sm:text-2xl">{value}</strong>
@@ -173,7 +173,7 @@ export default function HomePage() {
       </section>
 
       <section className="relative border-b border-outline-variant bg-surface-lowest" aria-labelledby="category-heading">
-        <div className="mx-auto max-w-(--container-page) px-4 py-8 sm:py-10 md:px-8">
+        <div className="container px-4 py-8 sm:py-10 md:px-8">
           <div className="mb-5 flex items-center justify-between gap-4">
             <h2 id="category-heading" className="text-headline-md font-bold text-on-surface">
               Shop by Category
@@ -202,7 +202,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-(--container-page) px-4 py-10 md:px-8 md:py-14">
+      <section className="container px-4 py-10 md:px-8 md:py-14">
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
           {DEAL_CARDS.map(({ title, description, image }) => (
             <article key={title} className="group overflow-hidden rounded-xl border border-outline-variant bg-surface-lowest shadow-[0_8px_20px_rgba(17,24,39,0.04)]">
@@ -230,7 +230,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-(--container-page) px-4 pb-10 md:px-8 md:pb-14" aria-labelledby="featured-heading">
+      <section className="container px-4 pb-10 md:px-8 md:pb-14" aria-labelledby="featured-heading">
         <div className="mb-6 flex items-center justify-between gap-4">
           <h2 id="featured-heading" className="text-[1.85rem] font-bold tracking-[-0.03em] text-on-surface sm:text-[2.2rem]">
             Featured Products
@@ -250,7 +250,7 @@ export default function HomePage() {
         </ul>
       </section>
 
-      <section className="relative mx-auto max-w-(--container-page) px-4 pb-20 md:px-8">
+      <section className="container relative px-4 pb-20 md:px-8">
         <div className="mb-8 flex flex-wrap items-center justify-between gap-3">
           <h2 className="text-[1.85rem] font-bold tracking-[-0.03em] text-on-surface sm:text-[2.2rem]">Best Sellers</h2>
           <Link to="/shop" className="hidden items-center gap-1 text-body-md font-semibold text-primary hover:underline sm:inline-flex">
@@ -299,7 +299,7 @@ export default function HomePage() {
         </ul>
       </section>
 
-      <section className="mx-auto max-w-(--container-page) px-4 pb-20 md:px-8" aria-label="Shop promotions">
+      <section className="container px-4 pb-20 md:px-8" aria-label="Shop promotions">
         <div className="grid gap-4 lg:grid-cols-2 lg:gap-6">
           {PROMO_CARDS.map(({ eyebrow, title, description, action, to, icon: Icon, className }) => (
             <article key={title} className={`relative min-h-48 overflow-hidden rounded-2xl px-5 py-6 text-white sm:px-7 sm:py-7 ${className}`}>
@@ -321,7 +321,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="relative mx-auto max-w-(--container-page) px-4 pb-20 md:px-8" aria-labelledby="brands-heading">
+      <section className="container relative px-4 pb-20 md:px-8" aria-labelledby="brands-heading">
         <h2 id="brands-heading" className="mb-6 text-[1.85rem] font-bold tracking-[-0.03em] text-on-surface sm:text-[2.2rem]">
           Shop Your Favorite Brands
         </h2>
@@ -341,7 +341,7 @@ export default function HomePage() {
         </ul>
       </section>
 
-      <section className="mx-auto max-w-(--container-page) px-4 pb-20 md:px-8" aria-labelledby="why-shop-heading">
+      <section className="container px-4 pb-20 md:px-8" aria-labelledby="why-shop-heading">
         <h2 id="why-shop-heading" className="mb-6 text-[1.85rem] font-bold tracking-[-0.03em] text-on-surface sm:text-[2.2rem]">
           Why Shop With IKO
         </h2>

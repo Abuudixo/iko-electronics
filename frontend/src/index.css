@@ -144,6 +144,12 @@
   animation: rise 0.6s cubic-bezier(0.2, 0.7, 0.3, 1) both;
 }
 
+@utility container {
+  width: 100%;
+  max-width: var(--container-page);
+  margin-inline: auto;
+}
+
 /* Headline scales down ~12% on mobile so titles don't break awkwardly. */
 @utility text-headline-lg-responsive {
   font-size: 28px;

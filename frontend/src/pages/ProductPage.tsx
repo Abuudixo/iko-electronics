@@ -40,7 +40,7 @@ export default function ProductPage() {
   }
 
   return (
-    <div className="mx-auto max-w-(--container-page) px-4 py-6 md:px-8 md:py-10">
+    <div className="container px-4 py-6 md:px-8 md:py-10">
       <nav aria-label="Breadcrumb" className="mb-6">
         <ol className="flex flex-wrap items-center gap-1.5 text-label-sm text-on-surface-variant">
           <li><Link to="/shop" className="hover:text-primary hover:underline">Shop</Link></li>

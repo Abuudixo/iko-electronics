@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function NotFoundPage() {
   return (
-    <div className="mx-auto flex max-w-(--container-page) flex-col items-center px-4 py-20 text-center md:px-8">
+    <div className="container flex flex-col items-center px-4 py-20 text-center md:px-8">
       <p className="text-label-md uppercase text-on-surface-variant">Error 404</p>
       <h1 className="mt-2 text-headline-lg-responsive">We couldn&rsquo;t find that page</h1>
       <p className="mt-3 max-w-prose text-on-surface-variant">

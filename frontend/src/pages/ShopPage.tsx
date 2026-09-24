@@ -162,7 +162,7 @@ export default function ShopPage() {
         <button
           type="button"
           onClick={() => setParams(query ? new URLSearchParams({ q: query }) : new URLSearchParams())}
-          className="self-start text-body-md font-semibold text-primary hover:underline"
+          className="h-11 cursor-pointer rounded bg-inverse-surface px-5 text-label-md font-semibold text-white shadow-none hover:bg-primary-hover"
         >
           Clear all filters
         </button>
@@ -203,7 +203,7 @@ export default function ShopPage() {
                 ref={filterButtonRef}
                 type="button"
                 onClick={() => setFiltersOpen(true)}
-                className="inline-flex h-11 items-center gap-2 rounded border border-outline-variant px-4 text-body-md md:hidden"
+                className="inline-flex h-11 cursor-pointer items-center gap-2 rounded bg-inverse-surface px-4 text-label-md font-semibold text-white shadow-none md:hidden"
               >
                 <SlidersHorizontal aria-hidden="true" className="size-4" />
                 Filters
@@ -262,7 +262,7 @@ export default function ShopPage() {
                   className={
                     n === safePage
                       ? "size-11 rounded bg-primary text-body-md font-semibold text-on-primary"
-                      : "size-11 rounded border border-outline-variant text-body-md hover:bg-surface-container"
+                      : "size-11 cursor-pointer rounded bg-inverse-surface text-body-md font-semibold text-white hover:bg-primary-hover"
                   }
                 >
                   {n}

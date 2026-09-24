@@ -219,7 +219,7 @@ export default function HomePage() {
               <p className="mt-1.5 text-label-md text-on-surface-variant">{description}</p>
               <Link
                 to="/shop"
-                className="mt-4 inline-flex h-10 items-center gap-2 rounded-lg bg-primary px-4 text-label-sm text-on-primary transition-colors hover:bg-primary-hover"
+                className="mt-4 inline-flex h-11 cursor-pointer items-center gap-2 rounded bg-primary px-5 text-label-md font-semibold text-white shadow-none transition-colors hover:bg-primary-hover"
               >
                 Buy now
                 <ArrowRight aria-hidden="true" className="size-4" />
@@ -263,7 +263,7 @@ export default function HomePage() {
           type="button"
           aria-label="Previous products"
           onClick={() => scrollProducts(-1)}
-          className="absolute left-1 top-[58%] z-10 grid size-9 -translate-y-1/2 place-items-center rounded-full border border-outline-variant bg-surface-lowest text-on-surface shadow-card transition-colors hover:border-primary hover:text-primary sm:left-2 sm:size-10 lg:left-0"
+          className="absolute left-1 top-[58%] z-10 grid size-9 -translate-y-1/2 cursor-pointer place-items-center rounded-full border border-outline-variant bg-surface-lowest text-on-surface shadow-none transition-colors hover:border-primary hover:text-primary sm:left-2 sm:size-10 lg:left-0"
         >
           <ChevronLeft aria-hidden="true" className="size-5" />
         </button>
@@ -271,7 +271,7 @@ export default function HomePage() {
           type="button"
           aria-label="Next products"
           onClick={() => scrollProducts(1)}
-          className="absolute right-1 top-[58%] z-10 grid size-9 -translate-y-1/2 place-items-center rounded-full border border-outline-variant bg-surface-lowest text-on-surface shadow-card transition-colors hover:border-primary hover:text-primary sm:right-2 sm:size-10 lg:right-0"
+          className="absolute right-1 top-[58%] z-10 grid size-9 -translate-y-1/2 cursor-pointer place-items-center rounded-full border border-outline-variant bg-surface-lowest text-on-surface shadow-none transition-colors hover:border-primary hover:text-primary sm:right-2 sm:size-10 lg:right-0"
         >
           <ChevronRight aria-hidden="true" className="size-5" />
         </button>
@@ -309,7 +309,7 @@ export default function HomePage() {
                 <p className="mt-3 text-body-md text-[#d5c9e9]">{description}</p>
                 <Link
                   to={to}
-                  className="mt-4 inline-flex h-10 cursor-pointer items-center gap-2 rounded-lg bg-white px-5 text-label-sm font-bold text-primary shadow-[0_4px_12px_rgba(0,0,0,0.16)] ring-1 ring-white/50 transition-all hover:-translate-y-0.5 hover:bg-primary-container hover:shadow-[0_6px_16px_rgba(0,0,0,0.2)]"
+                  className="mt-4 inline-flex h-11 cursor-pointer items-center gap-2 rounded bg-primary px-5 text-label-md font-semibold text-white shadow-none ring-1 ring-white/30 transition-colors hover:bg-primary-hover"
                 >
                   {action}
                   <ArrowRight aria-hidden="true" className="size-4" />
@@ -364,7 +364,7 @@ export default function HomePage() {
         </p>
         <Link
           to="/contact"
-          className="mx-auto mt-5 inline-flex h-11 items-center gap-2 rounded-lg bg-[#20d66b] px-6 text-label-md font-bold text-white shadow-[0_8px_20px_rgba(0,0,0,0.16)] transition-transform hover:-translate-y-0.5 hover:bg-[#19bd5c]"
+          className="mx-auto mt-5 inline-flex h-11 cursor-pointer items-center gap-2 rounded bg-[#20d66b] px-5 text-label-md font-semibold text-white shadow-none transition-colors hover:bg-[#19bd5c]"
         >
           <MessageCircle aria-hidden="true" className="size-5" />
           Chat on WhatsApp

@@ -7,22 +7,22 @@ type Size = "md" | "lg";
 
 const VARIANTS: Record<Variant, string> = {
   primary:
-    "bg-primary text-on-primary hover:bg-primary-hover active:bg-primary-pressed disabled:bg-outline",
+    "bg-primary text-white hover:bg-primary-hover active:bg-primary-pressed disabled:bg-outline disabled:text-white",
   secondary:
-    "bg-inverse-surface text-white hover:bg-primary-hover active:bg-primary-pressed disabled:bg-outline",
+    "bg-inverse-surface text-white hover:bg-primary-hover active:bg-primary-pressed disabled:bg-outline disabled:text-white",
   ghost:
-    "bg-primary text-white hover:bg-primary-hover active:bg-primary-pressed disabled:bg-outline",
-  danger: "bg-error text-on-error hover:bg-on-error-container disabled:bg-outline",
+    "bg-primary text-white hover:bg-primary-hover active:bg-primary-pressed disabled:bg-outline disabled:text-white",
+  danger: "bg-error text-white hover:bg-on-error-container disabled:bg-outline disabled:text-white",
 };
 
 const SIZES: Record<Size, string> = {
   // 48px minimum per DESIGN.md — also the floor for a comfortable touch target.
-  md: "h-12 px-6 text-label-md",
-  lg: "h-14 px-8 text-label-md",
+  md: "h-11 px-5 text-label-md",
+  lg: "h-11 px-5 text-label-md",
 };
 
 const BASE =
-  "inline-flex cursor-pointer items-center justify-center gap-2 rounded font-semibold transition-colors disabled:cursor-not-allowed";
+  "inline-flex cursor-pointer items-center justify-center gap-2 rounded font-semibold !text-white shadow-none transition-colors disabled:cursor-not-allowed";
 
 type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: Variant;

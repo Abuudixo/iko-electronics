@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { ArrowRight, Hand, Heart, LogOut, MapPin, MessageCircle, Package, ShieldCheck, Star, User } from "lucide-react";
+import Button from "@/components/ui/Button";
 
 const PROFILE_STORAGE_KEY = "iko.customer.profile.v1";
 const LOYALTY_THRESHOLD = 250;
@@ -158,7 +159,7 @@ export default function AccountPage() {
             className="mt-2 h-11 w-full rounded-lg border border-[#c8ccda] px-3 text-sm outline-none focus:border-[#6f4a9b]"
             placeholder="Enter your WhatsApp number or email"
           />
-          <button type="submit" className="mt-4 h-11 w-full rounded-lg bg-[#25386f] text-sm font-bold text-white">Sign In</button>
+          <Button type="submit" fullWidth className="mt-4">Sign In</Button>
         </form>
       </div>
     );
@@ -189,17 +190,17 @@ export default function AccountPage() {
               key={label}
               type="button"
               onClick={() => setActiveSection(label)}
-              className={`flex w-full items-center gap-3 rounded-xl px-3 py-2 text-left text-[0.76rem] font-medium ${activeSection === label ? "bg-[#eee5f7] text-[#4c2b77]" : "text-[#3d4050]"}`}
+              className={`flex h-11 w-full cursor-pointer items-center gap-3 rounded-xl px-3 text-left text-[0.76rem] font-medium text-white ${activeSection === label ? "bg-primary" : "bg-inverse-surface/80 hover:bg-primary-hover"}`}
             >
               {icon}
               {label}
             </button>
           ))}
           <div className="my-2 border-t border-[#eceaf0]" />
-          <button type="button" onClick={handleLogout} className="flex w-full items-center gap-3 rounded-xl px-3 py-2 text-left text-[0.76rem] font-medium text-[#d94343]">
+          <Button type="button" variant="danger" fullWidth onClick={handleLogout} className="justify-start px-3 text-left text-[0.76rem]">
             <LogOut aria-hidden="true" className="size-3.5" />
             Logout
-          </button>
+          </Button>
         </nav>
       </div>
 
@@ -228,8 +229,8 @@ export default function AccountPage() {
                     <strong className="text-[0.82rem] text-[#253052]">{order.total}</strong>
                   </div>
                   <div className="mt-3 flex gap-2">
-                    <button type="button" onClick={() => setOrderNotice(`${order.id} has been delivered.`)} className="rounded-md border border-[#a96ecb] px-2.5 py-1 text-[0.64rem] font-semibold text-[#6f3c91]">Track Order</button>
-                    <button type="button" onClick={() => setOrderNotice(`${order.id}: ${order.items} items, total ${order.total}.`)} className="rounded-md border border-[#d8dbe5] px-2.5 py-1 text-[0.64rem] font-semibold text-[#253052]">View Details</button>
+                    <Button type="button" size="md" onClick={() => setOrderNotice(`${order.id} has been delivered.`)} className="h-9 px-3 text-[0.64rem]">Track Order</Button>
+                    <Button type="button" size="md" variant="secondary" onClick={() => setOrderNotice(`${order.id}: ${order.items} items, total ${order.total}.`)} className="h-9 px-3 text-[0.64rem]">View Details</Button>
                   </div>
                 </article>
               ))}
@@ -288,7 +289,7 @@ export default function AccountPage() {
                   />
                 </label>
               ))}
-              <button type="submit" className="rounded-lg bg-[#8142a6] px-4 py-2.5 text-[0.76rem] font-bold text-white">Save Changes</button>
+              <Button type="submit">Save Changes</Button>
               {profileNotice && <p className="text-[0.68rem] font-medium text-[#1ea76b]">{profileNotice}</p>}
             </form>
           )}
@@ -303,9 +304,14 @@ export default function AccountPage() {
               </div>
 
               {!showAddressForm && (
-                <button type="button" onClick={() => { setShowAddressForm(true); setAddressNotice(""); }} className="mt-2 w-full rounded-xl border-2 border-dashed border-[#b57bd3] py-2.5 text-[0.72rem] font-bold text-[#8142a6]">
+                <Button
+                  type="button"
+                  fullWidth
+                  onClick={() => { setShowAddressForm(true); setAddressNotice(""); }}
+                  className="mt-2"
+                >
                   + Add New Address
-                </button>
+                </Button>
               )}
 
               {showAddressForm && (
@@ -321,8 +327,8 @@ export default function AccountPage() {
                   <input value={profile.city} onChange={(event) => setProfile((current) => ({ ...current, city: event.target.value }))} placeholder="City" className="h-9 w-full rounded-lg border border-[#ded6e7] px-3 text-xs outline-none focus:border-[#713892]" />
                   <input value={profile.address} onChange={(event) => setProfile((current) => ({ ...current, address: event.target.value }))} placeholder="Street or landmark" className="h-9 w-full rounded-lg border border-[#ded6e7] px-3 text-xs outline-none focus:border-[#713892]" />
                   <div className="flex gap-2 pt-1">
-                    <button type="submit" className="rounded-lg bg-[#8142a6] px-3 py-2 text-xs font-bold text-white">Save Address</button>
-                    <button type="button" onClick={() => setShowAddressForm(false)} className="rounded-lg border border-[#d8dbe5] px-3 py-2 text-xs font-bold text-[#253052]">Cancel</button>
+                    <Button type="submit" size="md" className="h-9 px-3 text-xs">Save Address</Button>
+                    <Button type="button" size="md" variant="secondary" onClick={() => setShowAddressForm(false)} className="h-9 px-3 text-xs">Cancel</Button>
                   </div>
                 </form>
               )}
@@ -366,10 +372,10 @@ export default function AccountPage() {
             ))}
           </div>
 
-          <button type="button" onClick={() => setActiveSection("My Orders")} className="mt-4 inline-flex items-center gap-2 text-[0.95rem] font-semibold text-[#1a2333]">
+          <Button type="button" onClick={() => setActiveSection("My Orders")} className="mt-4">
             View all orders
             <ArrowRight aria-hidden="true" className="size-4" />
-          </button>
+          </Button>
         </div>
       </div>}
 

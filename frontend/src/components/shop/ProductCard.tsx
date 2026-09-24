@@ -23,7 +23,7 @@ export default function ProductCard({ product }: { product: Product }) {
           variant="secondary"
           iconOnly
           aria-label={`Add ${product.name} to favourites`}
-          className="relative z-10 absolute right-3 top-3 rounded-full bg-surface-lowest text-primary shadow-sm hover:bg-primary-container"
+          className="relative z-10 absolute right-3 top-3 rounded-full bg-surface-lowest text-primary shadow-none hover:bg-primary-container"
         >
           <Heart aria-hidden="true" className="size-5" />
         </Button>
@@ -52,9 +52,9 @@ export default function ProductCard({ product }: { product: Product }) {
             disabled={soldOut}
             onClick={() => add(product, product.options?.[0] ?? null, 1)}
             aria-label={soldOut ? `${product.name} is out of stock` : `Add ${product.name} to cart`}
-            className="relative z-10 h-11 w-full px-3 text-body-md disabled:bg-surface-container disabled:text-outline"
+            className="relative z-10 h-11 w-full px-3 text-body-md !text-white disabled:bg-surface-container disabled:!text-white"
           >
-            <ShoppingCart aria-hidden="true" className="size-4" />
+            <ShoppingCart aria-hidden="true" className="size-4 text-white" />
             Add to cart
           </Button>
         </div>

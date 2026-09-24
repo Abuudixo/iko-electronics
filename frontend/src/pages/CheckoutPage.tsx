@@ -242,7 +242,7 @@ export default function CheckoutPage() {
                     ? "bg-inverse-surface text-white"
                     : currentStep > index + 1
                       ? "bg-primary text-white"
-                      : "bg-surface-container text-on-surface-variant",
+                      : "bg-surface-container text-white",
                   index > 1 ? "cursor-default" : "cursor-pointer",
                 ].join(" ")}
               >
@@ -525,7 +525,7 @@ export default function CheckoutPage() {
             <button
               type="button"
               onClick={() => navigate(-1)}
-              className="mx-auto mt-3 flex items-center gap-1 text-label-sm text-on-surface-variant hover:text-on-surface"
+              className="mx-auto mt-3 flex h-11 cursor-pointer items-center gap-1 rounded bg-inverse-surface px-5 text-label-md font-semibold text-white shadow-none hover:bg-primary-hover"
             >
               <ArrowLeft aria-hidden="true" className="size-3" />
               Back to Cart

@@ -94,7 +94,7 @@ export default function Footer() {
                   />
                   <button
                     type="submit"
-                    className="h-12 shrink-0 rounded bg-inverse-primary px-6 text-label-md text-inverse-surface transition-colors hover:bg-inverse-primary-hover"
+                    className="h-11 shrink-0 bg-primary px-5 text-label-md text-white hover:bg-primary-hover"
                   >
                     Join
                   </button>

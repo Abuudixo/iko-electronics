@@ -72,7 +72,7 @@ export default function Header() {
                   ? `Cart, ${itemCount} ${itemCount === 1 ? "item" : "items"}`
                   : "Cart, empty"
               }
-              className="relative grid size-11 place-items-center rounded-full text-on-surface transition-colors hover:bg-surface-container hover:text-primary"
+              className="relative grid size-11 place-items-center rounded-full bg-primary text-white transition-colors hover:bg-primary-hover"
             >
               <ShoppingCart aria-hidden="true" className="size-6" />
               {itemCount > 0 && (

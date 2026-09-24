@@ -25,7 +25,7 @@ export default function Hero() {
             Phones, laptops and audio chosen because they last — not because they carry the biggest margin.
           </p>
           <div className="mt-5 flex flex-col items-center justify-center gap-3 sm:mt-9 sm:gap-4 lg:flex-row lg:items-center lg:justify-start">
-            <Link to="/shop" className="inline-flex h-12 w-full max-w-[260px] cursor-pointer items-center justify-center gap-2 rounded-lg bg-primary px-6 text-label-md text-on-primary transition-colors hover:bg-primary-hover sm:px-7">
+            <Link to="/shop" className="inline-flex h-11 w-full max-w-[260px] cursor-pointer items-center justify-center gap-2 rounded bg-primary px-5 text-label-md font-semibold text-white shadow-none transition-colors hover:bg-primary-hover">
               Shop all products
               <ArrowRight aria-hidden="true" className="size-4" />
             </Link>

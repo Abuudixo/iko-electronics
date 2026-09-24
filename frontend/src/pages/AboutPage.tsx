@@ -93,13 +93,13 @@ export default function AboutPage() {
           <div className="mt-8 flex flex-col items-center gap-3 lg:flex-row lg:justify-start">
             <Link
               to="/shop"
-              className="inline-flex min-h-11 w-full max-w-[220px] items-center justify-center rounded-lg bg-primary px-6 text-label-md text-on-primary transition-colors hover:bg-primary-hover"
+              className="inline-flex h-11 w-full max-w-[220px] cursor-pointer items-center justify-center rounded bg-primary px-5 text-label-md font-semibold text-white shadow-none transition-colors hover:bg-primary-hover"
             >
               Browse Products
             </Link>
             <Link
               to="/contact"
-              className="inline-flex min-h-11 w-full max-w-[220px] items-center justify-center rounded-lg border-2 border-inverse-surface px-6 text-label-md text-inverse-surface transition-colors hover:bg-inverse-surface hover:text-white"
+              className="inline-flex h-11 w-full max-w-[220px] cursor-pointer items-center justify-center rounded bg-primary px-5 text-label-md font-semibold text-white shadow-none transition-colors hover:bg-primary-hover"
             >
               Contact Us
             </Link>

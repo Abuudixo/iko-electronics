@@ -252,7 +252,7 @@ export default function ShopPage() {
           )}
 
           {totalPages > 1 && (
-            <nav aria-label="Pagination" className="mt-14 flex flex-col items-center gap-4 border-t border-outline-variant pt-6 sm:flex-row sm:justify-between">
+            <nav aria-label="Pagination" className="mt-14 flex flex-col items-center gap-4 overflow-x-auto border-t border-outline-variant pt-6 sm:flex-row sm:justify-between">
               <p className="text-label-sm text-on-surface-variant">
                 Page <strong className="font-bold text-on-surface">{safePage}</strong> of {totalPages}
               </p>

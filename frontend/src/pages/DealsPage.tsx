@@ -25,7 +25,7 @@ export default function DealsPage() {
           <Button to="/shop">Shop all products</Button>
         </div>
       ) : (
-        <ul className="mt-8 grid grid-cols-2 gap-6 lg:grid-cols-3 xl:grid-cols-4">
+        <ul className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 xl:grid-cols-4">
           {deals.map((product) => (
             <li key={product.id}>
               <ProductCard product={product} />

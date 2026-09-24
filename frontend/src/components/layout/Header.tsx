@@ -15,7 +15,7 @@ export default function Header() {
   return (
     <>
       <header className="sticky top-0 z-30 border-b border-outline-variant bg-surface/80 backdrop-blur-md">
-        <div className="flex min-h-12 items-center justify-center gap-3 bg-inverse-surface px-4 py-2 text-center text-label-md text-inverse-on-surface">
+        <div className="flex min-h-12 flex-wrap items-center justify-center gap-x-3 gap-y-1 bg-inverse-surface px-4 py-2 text-center text-label-sm text-inverse-on-surface sm:text-label-md">
           <span className="inline-flex items-center gap-2">
             <Zap aria-hidden="true" className="size-4 fill-[#ff9f43] text-[#ff9f43]" />
             <span>Fast Delivery Across Mogadishu</span>
@@ -30,7 +30,7 @@ export default function Header() {
         <div className="container flex h-20 items-center gap-4 px-4 md:px-8">
           <Logo />
 
-          <nav aria-label="Main" className="ml-[88px] hidden items-center gap-4 lg:flex">
+          <nav aria-label="Main" className="ml-4 hidden items-center gap-2 lg:flex xl:ml-16 xl:gap-4">
             {PRIMARY_NAV.map(({ label, to }) => (
               <NavLink
                 key={to}
@@ -51,7 +51,7 @@ export default function Header() {
           </nav>
 
           <div className="ml-auto flex items-center gap-1 md:gap-2">
-            <SearchForm className="hidden w-64 lg:block" />
+            <SearchForm className="hidden w-48 lg:block xl:w-64" />
 
             <Link
               to="/account"

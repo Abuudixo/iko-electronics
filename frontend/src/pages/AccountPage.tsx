@@ -228,7 +228,7 @@ export default function AccountPage() {
                     <span>{order.items} items</span>
                     <strong className="text-[0.82rem] text-[#253052]">{order.total}</strong>
                   </div>
-                  <div className="mt-3 flex gap-2">
+                  <div className="mt-3 flex flex-wrap gap-2">
                     <Button type="button" size="md" onClick={() => setOrderNotice(`${order.id} has been delivered.`)} className="h-9 px-3 text-[0.64rem]">Track Order</Button>
                     <Button type="button" size="md" variant="secondary" onClick={() => setOrderNotice(`${order.id}: ${order.items} items, total ${order.total}.`)} className="h-9 px-3 text-[0.64rem]">View Details</Button>
                   </div>

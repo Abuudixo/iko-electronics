@@ -366,7 +366,7 @@ export default function CheckoutPage() {
                   <label
                     key={payment.id}
                     className={[
-                      "flex cursor-pointer items-center gap-4 rounded-2xl border-2 px-5 py-4 transition-colors",
+                      "flex cursor-pointer items-center gap-3 rounded-2xl border-2 px-3 py-4 transition-colors sm:gap-4 sm:px-5",
                       selected
                         ? "border-primary bg-primary-container/70"
                         : "border-[#e5e0ef] bg-surface-lowest hover:border-primary",
@@ -412,7 +412,7 @@ export default function CheckoutPage() {
                   <label
                     key={deliveryOption.id}
                     className={[
-                      "flex cursor-pointer items-center gap-4 rounded-2xl border-2 px-5 py-4 transition-colors",
+                      "flex cursor-pointer items-center gap-3 rounded-2xl border-2 px-3 py-4 transition-colors sm:gap-4 sm:px-5",
                       selected
                         ? "border-primary bg-primary-container/70"
                         : "border-[#e5e0ef] bg-surface-lowest hover:border-primary",

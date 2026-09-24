@@ -1,6 +1,6 @@
 import { useEffect, useState, type FormEvent } from "react";
 import { useNavigate } from "react-router-dom";
-import { ArrowLeft, MessageCircle, ShoppingBag } from "lucide-react";
+import { ArrowLeft, Banknote, Building2, Clock3, CreditCard, Home, MessageCircle, Smartphone, ShoppingBag } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 import { formatPrice } from "@/lib/utils";
 import Button from "@/components/ui/Button";
@@ -10,15 +10,15 @@ const FIELD_INTERACTION =
   "transition-colors hover:border-primary focus:border-primary focus:ring-2 focus:ring-primary/20";
 
 const PAYMENT_METHODS = [
-  { id: "mobile-money", icon: "📱", label: "Mobile Money", description: "Pay with EVC Plus, Zaad, or SAHAL" },
-  { id: "cash", icon: "💵", label: "Cash on Delivery", description: "Pay when your order arrives" },
-  { id: "store", icon: "🏪", label: "Pay at Store", description: "Visit our store and pay in person" },
-  { id: "bank", icon: "🏦", label: "Bank Transfer", description: "Transfer to our bank account" },
+  { id: "mobile-money", icon: Smartphone, label: "Mobile Money", description: "Pay with EVC Plus, Zaad, or SAHAL" },
+  { id: "cash", icon: Banknote, label: "Cash on Delivery", description: "Pay when your order arrives" },
+  { id: "store", icon: Building2, label: "Pay at Store", description: "Visit our store and pay in person" },
+  { id: "bank", icon: CreditCard, label: "Bank Transfer", description: "Transfer to our bank account" },
 ] as const;
 
 const DELIVERY_METHODS = [
-  { id: "home", icon: "🏠", label: "Home Delivery", description: "Delivered to your door. Free", timing: "1-2 business days" },
-  { id: "pickup", icon: "🏪", label: "Store Pickup", description: "Pick up from our store. Free", timing: "Ready in 2 hours" },
+  { id: "home", icon: Home, label: "Home Delivery", description: "Delivered to your door. Free", timing: "1-2 business days" },
+  { id: "pickup", icon: Building2, label: "Store Pickup", description: "Pick up from our store. Free", timing: "Ready in 2 hours" },
 ] as const;
 
 const BANAADIR_DISTRICTS = [
@@ -380,7 +380,7 @@ export default function CheckoutPage() {
                       onChange={() => setPaymentMethod(payment.id)}
                       className="sr-only"
                     />
-                    <span aria-hidden="true" className="text-2xl">{payment.icon}</span>
+                    <payment.icon aria-hidden="true" className="size-7 shrink-0 text-primary" />
                     <span className="min-w-0 flex-1">
                       <span className="block text-body-lg font-bold text-on-surface">{payment.label}</span>
                       <span className="block text-body-md text-on-surface-variant">{payment.description}</span>
@@ -426,11 +426,14 @@ export default function CheckoutPage() {
                       onChange={() => setDeliveryMethod(deliveryOption.id)}
                       className="sr-only"
                     />
-                    <span aria-hidden="true" className="text-2xl">{deliveryOption.icon}</span>
+                    <deliveryOption.icon aria-hidden="true" className="size-7 shrink-0 text-primary" />
                     <span className="min-w-0 flex-1">
                       <span className="block text-body-lg font-bold text-on-surface">{deliveryOption.label}</span>
                       <span className="block text-body-md text-on-surface-variant">{deliveryOption.description}</span>
-                      <span className="mt-1 block text-body-md font-semibold text-primary">◷ {deliveryOption.timing}</span>
+                      <span className="mt-1 flex items-center gap-1 text-body-md font-semibold text-primary">
+                        <Clock3 aria-hidden="true" className="size-4" />
+                        {deliveryOption.timing}
+                      </span>
                     </span>
                     <span
                       aria-hidden="true"

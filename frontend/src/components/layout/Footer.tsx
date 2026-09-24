@@ -13,6 +13,7 @@ import Logo from "./Logo";
  * Company, driven by lib/nav.ts.
  *
  * Set on IKO navy so the footer matches the wordmark color.
+import Button from "@/components/ui/Button";
  */
 export default function Footer() {
   const [email, setEmail] = useState("");

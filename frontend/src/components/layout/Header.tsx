@@ -91,7 +91,7 @@ export default function Header() {
               onClick={() => setMenuOpen(true)}
               aria-label="Open menu"
               aria-expanded={menuOpen}
-              className="grid size-11 place-items-center rounded-full text-on-surface hover:bg-surface-container lg:hidden"
+              className="grid size-11 cursor-pointer place-items-center rounded-full text-on-surface hover:bg-surface-container lg:hidden"
             >
               <Menu aria-hidden="true" className="size-6" />
             </button>

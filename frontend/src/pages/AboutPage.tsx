@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { MessageCircle } from "lucide-react";
+import { Handshake, MessageCircle, Package, Target } from "lucide-react";
 
 export default function AboutPage() {
   return (
@@ -40,7 +40,7 @@ export default function AboutPage() {
       <section className="bg-surface-lowest pb-16 md:pb-20">
         <div className="mx-auto grid max-w-(--container-page) gap-4 px-6 md:grid-cols-3 md:px-12">
           <article className="rounded-xl border border-primary-container bg-primary-container/25 p-5">
-            <span aria-hidden="true" className="text-3xl">🎯</span>
+            <Target aria-hidden="true" className="size-8 text-primary" />
             <h2 className="mt-4 text-lg font-bold text-on-surface">Our Mission</h2>
             <p className="mt-2 text-body-md leading-relaxed text-on-surface-variant">
               To make quality technology accessible to every Somali household,
@@ -50,7 +50,7 @@ export default function AboutPage() {
           </article>
 
           <article className="rounded-xl border border-primary-container bg-primary-container/25 p-5">
-            <span aria-hidden="true" className="text-3xl">📦</span>
+            <Package aria-hidden="true" className="size-8 text-primary" />
             <h2 className="mt-4 text-lg font-bold text-on-surface">Our Products</h2>
             <p className="mt-2 text-body-md leading-relaxed text-on-surface-variant">
               We carry a carefully curated selection of smartphones, laptops,
@@ -60,7 +60,7 @@ export default function AboutPage() {
           </article>
 
           <article className="rounded-xl border border-primary-container bg-primary-container/25 p-5">
-            <span aria-hidden="true" className="text-3xl">🤝</span>
+            <Handshake aria-hidden="true" className="size-8 text-primary" />
             <h2 className="mt-4 text-lg font-bold text-on-surface">Our Commitment</h2>
             <p className="mt-2 text-body-md leading-relaxed text-on-surface-variant">
               We stand behind every product we sell. Our team is always

@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { ArrowRight, Heart, LogOut, MapPin, MessageCircle, Package, ShieldCheck, Star, User } from "lucide-react";
+import { ArrowRight, Hand, Heart, LogOut, MapPin, MessageCircle, Package, ShieldCheck, Star, User } from "lucide-react";
 
 const PROFILE_STORAGE_KEY = "iko.customer.profile.v1";
 const LOYALTY_THRESHOLD = 250;
@@ -205,7 +205,7 @@ export default function AccountPage() {
 
       <div className="mt-5 rounded-[1.1rem] bg-[#25386f] px-4 py-5 text-white shadow-[0_8px_18px_rgba(37,56,111,0.18)] lg:col-start-2 lg:row-start-1 lg:mt-0 lg:px-8 lg:py-8">
         <div className="text-[0.72rem] text-white/75">Welcome back</div>
-        <div className="mt-1 text-[1.25rem] font-black">{userName} <span aria-hidden="true">👋</span></div>
+        <div className="mt-1 flex items-center gap-2 text-[1.25rem] font-black">{userName} <Hand aria-hidden="true" className="size-5 text-white/80" /></div>
         <div className="mt-1 text-[0.68rem] font-medium text-white/80">Member since July 2026</div>
       </div>
 

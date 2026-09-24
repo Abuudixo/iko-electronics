@@ -4,6 +4,7 @@ import type { Product } from "@/types/catalog";
 import { discountPercent, isOnSale } from "@/types/catalog";
 import { useCart } from "@/context/CartContext";
 import Badge from "@/components/ui/Badge";
+import Button from "@/components/ui/Button";
 import Price from "@/components/ui/Price";
 import ProductImage from "@/components/ui/ProductImage";
 
@@ -17,13 +18,15 @@ export default function ProductCard({ product }: { product: Product }) {
       <div className="relative aspect-[1.08] overflow-hidden bg-[#edf3ff] p-2.5 sm:aspect-square sm:p-4">
         <ProductImage product={product} className="rounded-[0.8rem]" />
 
-        <button
+        <Button
           type="button"
+          variant="secondary"
+          iconOnly
           aria-label={`Add ${product.name} to favourites`}
-          className="relative z-10 absolute right-3 top-3 grid size-10 place-items-center rounded-full bg-surface-lowest text-primary shadow-sm transition-colors hover:bg-primary-container"
+          className="relative z-10 absolute right-3 top-3 rounded-full bg-surface-lowest text-primary shadow-sm hover:bg-primary-container"
         >
           <Heart aria-hidden="true" className="size-5" />
-        </button>
+        </Button>
 
         <div className="absolute left-3 top-3 flex flex-col items-start gap-1.5">
           {isOnSale(product) && <Badge tone="sale">{off}% off</Badge>}
@@ -44,16 +47,16 @@ export default function ProductCard({ product }: { product: Product }) {
         <div className="mt-auto flex flex-col items-stretch gap-3 pt-2">
           <Price price={product.price} compareAtPrice={product.compareAtPrice} size="sm" />
 
-          <button
+          <Button
             type="button"
             disabled={soldOut}
             onClick={() => add(product, product.options?.[0] ?? null, 1)}
             aria-label={soldOut ? `${product.name} is out of stock` : `Add ${product.name} to cart`}
-            className="relative z-10 inline-flex h-11 w-full items-center justify-center gap-2 rounded bg-primary px-3 text-body-md font-semibold text-on-primary transition-colors hover:bg-primary-hover disabled:bg-surface-container disabled:text-outline"
+            className="relative z-10 h-11 w-full px-3 text-body-md disabled:bg-surface-container disabled:text-outline"
           >
             <ShoppingCart aria-hidden="true" className="size-4" />
             Add to cart
-          </button>
+          </Button>
         </div>
       </div>
     </article>

@@ -1,6 +1,29 @@
 import { useRef } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, ChevronLeft, ChevronRight, MessageCircle, Tv, Zap } from "lucide-react";
+import {
+  ArrowRight,
+  BatteryCharging,
+  ChevronLeft,
+  ChevronRight,
+  CircleDollarSign,
+  Cpu,
+  Gamepad2,
+  Hand,
+  Headphones,
+  House,
+  Laptop,
+  MessageCircle,
+  Mic2,
+  Plug,
+  Scissors,
+  Smartphone,
+  Star,
+  Truck,
+  Tv,
+  Watch,
+  Zap,
+} from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import { PRODUCTS } from "@/data/products";
 import { CATEGORIES } from "@/types/catalog";
 import Hero from "@/components/home/Hero";
@@ -8,17 +31,17 @@ import ProductCard from "@/components/shop/ProductCard";
 
 const featured = PRODUCTS.filter((p) => p.compareAtPrice !== null || p.isNew);
 
-const CATEGORY_ICONS: Record<(typeof CATEGORIES)[number]["slug"], string> = {
-  smartphones: "\u{1F4F1}",
-  laptops: "\u{1F4BB}",
-  tvs: "\u{1F4FA}",
-  audio: "\u{1F3A7}",
-  wearables: "\u{231A}",
-  accessories: "\u{1F50C}",
-  "home-appliances": "\u{1F3E0}",
-  gaming: "\u{1F3AE}",
-  "power-charging": "\u{26A1}",
-  "hair-stylers": "\u{1F487}\u{200D}\u{2640}\u{FE0F}",
+const CATEGORY_ICONS: Record<(typeof CATEGORIES)[number]["slug"], LucideIcon> = {
+  smartphones: Smartphone,
+  laptops: Laptop,
+  tvs: Tv,
+  audio: Headphones,
+  wearables: Watch,
+  accessories: Plug,
+  "home-appliances": House,
+  gaming: Gamepad2,
+  "power-charging": BatteryCharging,
+  "hair-stylers": Scissors,
 };
 
 const CATEGORY_STYLES = [
@@ -80,23 +103,23 @@ const PROMO_CARDS = [
 ];
 
 const BRAND_SHOWCASE = [
-  { label: "Samsung", filter: "Aurora", icon: "\u{1F4A0}" },
-  { label: "Apple", filter: "Meridian", icon: "\u{1F34E}" },
-  { label: "Havit", filter: "NovaSound", icon: "\u{1F3A7}" },
-  { label: "Haier", filter: "ClearView", icon: "\u{2744}\u{FE0F}" },
-  { label: "Xiaomi", filter: "Aurora", icon: "\u{1F4F1}" },
-  { label: "JBL", filter: "NovaSound", icon: "\u{1F50A}" },
-  { label: "Oraimo", filter: "PulseFit", icon: "\u{26A1}" },
-  { label: "HP", filter: "Meridian", icon: "\u{1F4BB}" },
-  { label: "Dell", filter: "Keystone", icon: "\u{1F4BB}" },
-  { label: "Lenovo", filter: "VoltCore", icon: "\u{1F4BC}" },
+  { label: "Samsung", filter: "Aurora", icon: Star },
+  { label: "Apple", filter: "Meridian", icon: CircleDollarSign },
+  { label: "Havit", filter: "NovaSound", icon: Headphones },
+  { label: "Haier", filter: "ClearView", icon: Cpu },
+  { label: "Xiaomi", filter: "Aurora", icon: Smartphone },
+  { label: "JBL", filter: "NovaSound", icon: Mic2 },
+  { label: "Oraimo", filter: "PulseFit", icon: Zap },
+  { label: "HP", filter: "Meridian", icon: Laptop },
+  { label: "Dell", filter: "Keystone", icon: Laptop },
+  { label: "Lenovo", filter: "VoltCore", icon: Laptop },
 ];
 
 const WHY_SHOP_POINTS = [
-  { icon: "\u{1F680}", title: "Fast Delivery", description: "Quick delivery within Mogadishu and supported locations." },
-  { icon: "\u{2705}", title: "Quality Products", description: "Carefully selected electronics from trusted brands." },
-  { icon: "\u{1F4B3}", title: "Easy Payment", description: "Mobile money, cash on delivery, and more options." },
-  { icon: "\u{1F4AC}", title: "Customer Support", description: "Easy assistance through WhatsApp anytime." },
+  { icon: Truck, title: "Fast Delivery", description: "Quick delivery within Mogadishu and supported locations." },
+  { icon: Star, title: "Quality Products", description: "Carefully selected electronics from trusted brands." },
+  { icon: CircleDollarSign, title: "Easy Payment", description: "Mobile money, cash on delivery, and more options." },
+  { icon: Hand, title: "Customer Support", description: "Easy assistance through WhatsApp anytime." },
 ];
 
 export default function HomePage() {
@@ -169,7 +192,7 @@ export default function HomePage() {
                     to={`/shop?category=${slug}`}
                     className={`group flex h-full min-h-[78px] flex-col items-center justify-center rounded-[0.9rem] px-2 py-2 text-center transition-transform hover:-translate-y-0.5 hover:shadow-card sm:min-h-[88px] sm:rounded-2xl sm:px-3 sm:py-2 lg:min-h-[76px] lg:rounded-xl lg:px-1 lg:py-1 ${CATEGORY_STYLES[index]}`}
                   >
-                    <span aria-hidden="true" className="text-xl leading-none sm:text-2xl lg:text-lg">{CATEGORY_ICONS[slug]}</span>
+                    {(() => { const Icon = CATEGORY_ICONS[slug]; return <Icon aria-hidden="true" className="size-6 sm:size-7 lg:size-5" />; })()}
                     <span className="mt-1.5 text-[11px] font-bold leading-tight text-on-surface sm:mt-2 sm:text-label-sm lg:mt-1 lg:text-[10px]">{label}</span>
                   </Link>
                 </li>
@@ -304,13 +327,13 @@ export default function HomePage() {
         </h2>
 
         <ul className="-mx-4 flex gap-2.5 overflow-x-auto px-4 pb-2 sm:mx-0 sm:gap-3 sm:px-0 lg:mx-0 lg:grid lg:grid-cols-10 lg:gap-2 lg:overflow-visible lg:px-0">
-          {BRAND_SHOWCASE.map(({ label, filter, icon }) => (
+          {BRAND_SHOWCASE.map(({ label, filter, icon: Icon }) => (
             <li key={label} className="w-[30vw] shrink-0 sm:w-[150px] lg:w-auto">
               <Link
                 to={`/shop?brand=${encodeURIComponent(filter)}`}
                 className="group flex aspect-[1.08] flex-col items-center justify-center gap-1.5 rounded-md border border-outline-variant bg-surface-lowest px-2 py-1.5 text-center transition-all hover:-translate-y-0.5 hover:border-primary hover:shadow-card sm:rounded-lg sm:px-2 sm:py-2 lg:aspect-auto lg:min-h-[76px] lg:gap-1 lg:rounded-xl lg:px-1 lg:py-1"
               >
-                <span aria-hidden="true" className="text-lg leading-none sm:text-2xl lg:text-lg">{icon}</span>
+                <Icon aria-hidden="true" className="size-6 sm:size-7 lg:size-5" />
                 <span className="text-[10px] font-bold text-on-surface sm:text-[11px] lg:text-[10px]">{label}</span>
               </Link>
             </li>
@@ -323,9 +346,9 @@ export default function HomePage() {
           Why Shop With IKO
         </h2>
         <ul className="grid grid-cols-2 gap-3 sm:grid-cols-2 lg:grid-cols-4 lg:gap-4">
-          {WHY_SHOP_POINTS.map(({ icon, title, description }) => (
+          {WHY_SHOP_POINTS.map(({ icon: Icon, title, description }) => (
             <li key={title} className="rounded-xl border border-outline-variant bg-surface-lowest px-3 py-4 text-center sm:px-4">
-              <span aria-hidden="true" className="text-2xl leading-none sm:text-3xl">{icon}</span>
+              <Icon aria-hidden="true" className="mx-auto size-8 sm:size-9" />
               <h3 className="mt-2 text-sm font-bold text-on-surface sm:mt-3 sm:text-body-lg">{title}</h3>
               <p className="mt-1.5 text-[10px] text-on-surface-variant sm:mt-2 sm:text-label-md">{description}</p>
             </li>

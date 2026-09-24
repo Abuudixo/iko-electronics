@@ -9,9 +9,9 @@ const VARIANTS: Record<Variant, string> = {
   primary:
     "bg-primary text-on-primary hover:bg-primary-hover active:bg-primary-pressed disabled:bg-outline",
   secondary:
-    "border border-on-surface text-on-surface hover:bg-surface-container active:bg-surface-high disabled:border-outline-variant disabled:text-outline",
+    "bg-inverse-surface text-white hover:bg-primary-hover active:bg-primary-pressed disabled:bg-outline",
   ghost:
-    "text-on-surface hover:bg-surface-container active:bg-surface-high disabled:text-outline",
+    "bg-primary text-white hover:bg-primary-hover active:bg-primary-pressed disabled:bg-outline",
   danger: "bg-error text-on-error hover:bg-on-error-container disabled:bg-outline",
 };
 
@@ -22,12 +22,13 @@ const SIZES: Record<Size, string> = {
 };
 
 const BASE =
-  "inline-flex items-center justify-center gap-2 rounded font-semibold transition-colors disabled:cursor-not-allowed";
+  "inline-flex cursor-pointer items-center justify-center gap-2 rounded font-semibold transition-colors disabled:cursor-not-allowed";
 
 type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: Variant;
   size?: Size;
   fullWidth?: boolean;
+  iconOnly?: boolean;
   /** Renders a router Link styled as a button. */
   to?: string;
   children: ReactNode;
@@ -37,12 +38,20 @@ export default function Button({
   variant = "primary",
   size = "md",
   fullWidth,
+  iconOnly,
   to,
   className,
   children,
   ...rest
 }: Props) {
-  const classes = cn(BASE, VARIANTS[variant], SIZES[size], fullWidth && "w-full", className);
+  const classes = cn(
+    BASE,
+    VARIANTS[variant],
+    SIZES[size],
+    iconOnly && "size-11 !p-0",
+    fullWidth && "w-full",
+    className,
+  );
 
   if (to) {
     return (

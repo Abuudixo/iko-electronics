@@ -71,7 +71,7 @@ export default function MobileNav({
             type="button"
             onClick={onClose}
             aria-label="Close menu"
-            className="grid size-11 place-items-center rounded-full text-on-surface hover:bg-surface-container"
+            className="grid size-11 cursor-pointer place-items-center rounded-full text-on-surface hover:bg-surface-container"
           >
             <X aria-hidden="true" className="size-6" />
           </button>

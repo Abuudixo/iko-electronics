@@ -30,7 +30,7 @@ export default function QuantityStepper({
         onClick={() => canDecrease && onChange(value - 1)}
         disabled={!canDecrease}
         aria-label={`Decrease ${label.toLowerCase()}`}
-        className="grid size-11 place-items-center rounded-l text-on-surface transition-colors hover:bg-surface-container disabled:cursor-not-allowed disabled:text-outline-variant"
+        className="grid size-11 cursor-pointer place-items-center rounded-l text-on-surface transition-colors hover:bg-surface-container disabled:cursor-not-allowed disabled:text-outline-variant"
       >
         <Minus aria-hidden="true" className="size-4" />
       </button>
@@ -49,7 +49,7 @@ export default function QuantityStepper({
         onClick={() => canIncrease && onChange(value + 1)}
         disabled={!canIncrease}
         aria-label={`Increase ${label.toLowerCase()}`}
-        className="grid size-11 place-items-center rounded-r text-on-surface transition-colors hover:bg-surface-container disabled:cursor-not-allowed disabled:text-outline-variant"
+        className="grid size-11 cursor-pointer place-items-center rounded-r text-on-surface transition-colors hover:bg-surface-container disabled:cursor-not-allowed disabled:text-outline-variant"
       >
         <Plus aria-hidden="true" className="size-4" />
       </button>

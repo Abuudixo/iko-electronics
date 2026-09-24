@@ -239,7 +239,7 @@ export default function CheckoutPage() {
                 className={[
                   "relative z-10 grid size-6 place-items-center rounded-full text-label-sm",
                   currentStep === index + 1
-                    ? "bg-inverse-surface text-white"
+                      ? "bg-primary text-white"
                     : currentStep > index + 1
                       ? "bg-primary text-white"
                       : "bg-surface-container text-white",
@@ -525,7 +525,7 @@ export default function CheckoutPage() {
             <button
               type="button"
               onClick={() => navigate(-1)}
-              className="mx-auto mt-3 flex h-11 cursor-pointer items-center gap-1 rounded bg-inverse-surface px-5 text-label-md font-semibold text-white shadow-none hover:bg-primary-hover"
+              className="mx-auto mt-3 flex h-11 cursor-pointer items-center gap-1 rounded bg-primary px-5 text-label-md font-semibold text-white shadow-none hover:bg-primary-hover"
             >
               <ArrowLeft aria-hidden="true" className="size-3" />
               Back to Cart

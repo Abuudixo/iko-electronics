@@ -63,7 +63,7 @@ export default function OrderConfirmedPage() {
 
       <a
         href="https://wa.me/252600000000"
-        className="mt-6 inline-flex h-11 w-full cursor-pointer items-center justify-center gap-2 rounded bg-[#22c968] px-5 text-label-md font-semibold text-white shadow-none transition-colors hover:bg-[#1eaf5b]"
+        className="mt-6 inline-flex h-11 w-full cursor-pointer items-center justify-center gap-2 rounded bg-primary px-5 text-label-md font-semibold text-white shadow-none transition-colors hover:bg-primary-hover"
       >
         <MessageCircle aria-hidden="true" className="size-5" />
         Contact Us on WhatsApp

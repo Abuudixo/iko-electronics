@@ -190,7 +190,7 @@ export default function AccountPage() {
               key={label}
               type="button"
               onClick={() => setActiveSection(label)}
-              className={`flex h-11 w-full cursor-pointer items-center gap-3 rounded-xl px-3 text-left text-[0.76rem] font-medium text-white ${activeSection === label ? "bg-primary" : "bg-inverse-surface/80 hover:bg-primary-hover"}`}
+              className={`flex h-11 w-full cursor-pointer items-center gap-3 rounded-xl px-3 text-left text-[0.76rem] font-medium text-white ${activeSection === label ? "bg-primary" : "bg-primary/80 hover:bg-primary-hover"}`}
             >
               {icon}
               {label}
@@ -383,7 +383,7 @@ export default function AccountPage() {
         <a
           href="https://wa.me/000000000"
           aria-label="WhatsApp"
-          className="grid size-12 place-items-center rounded-full bg-[#2ecb6d] text-white shadow-[0_10px_18px_rgba(46,203,109,0.38)] transition-transform hover:scale-105"
+          className="grid size-12 place-items-center rounded-full bg-primary text-white shadow-none transition-colors hover:bg-primary-hover"
         >
           <MessageCircle aria-hidden="true" className="size-6" />
         </a>

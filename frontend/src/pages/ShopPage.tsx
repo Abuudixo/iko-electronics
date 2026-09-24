@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { SlidersHorizontal, X } from "lucide-react";
+import { ChevronLeft, ChevronRight, SlidersHorizontal, X } from "lucide-react";
 import { BRANDS, PRODUCTS } from "@/data/products";
 import { CATEGORIES, SORT_OPTIONS, type Product, type SortKey } from "@/types/catalog";
 import { formatPrice } from "@/lib/utils";
@@ -162,7 +162,7 @@ export default function ShopPage() {
         <button
           type="button"
           onClick={() => setParams(query ? new URLSearchParams({ q: query }) : new URLSearchParams())}
-          className="h-11 cursor-pointer rounded bg-inverse-surface px-5 text-label-md font-semibold text-white shadow-none hover:bg-primary-hover"
+          className="h-11 cursor-pointer rounded bg-primary px-5 text-label-md font-semibold text-white shadow-none hover:bg-primary-hover"
         >
           Clear all filters
         </button>
@@ -203,7 +203,7 @@ export default function ShopPage() {
                 ref={filterButtonRef}
                 type="button"
                 onClick={() => setFiltersOpen(true)}
-                className="inline-flex h-11 cursor-pointer items-center gap-2 rounded bg-inverse-surface px-4 text-label-md font-semibold text-white shadow-none md:hidden"
+                className="inline-flex h-11 cursor-pointer items-center gap-2 rounded bg-primary px-4 text-label-md font-semibold text-white shadow-none hover:bg-primary-hover md:hidden"
               >
                 <SlidersHorizontal aria-hidden="true" className="size-4" />
                 Filters
@@ -252,22 +252,51 @@ export default function ShopPage() {
           )}
 
           {totalPages > 1 && (
-            <nav aria-label="Pagination" className="mt-12 flex justify-center gap-2">
-              {Array.from({ length: totalPages }, (_, i) => i + 1).map((n) => (
+            <nav aria-label="Pagination" className="mt-14 flex flex-col items-center gap-4 border-t border-outline-variant pt-6 sm:flex-row sm:justify-between">
+              <p className="text-label-sm text-on-surface-variant">
+                Page <strong className="font-bold text-on-surface">{safePage}</strong> of {totalPages}
+              </p>
+
+              <div className="flex items-center gap-1 rounded-xl border border-outline-variant bg-surface-lowest p-1">
                 <button
-                  key={n}
                   type="button"
-                  aria-current={n === safePage ? "page" : undefined}
-                  onClick={() => update((next) => next.set("page", String(n)), false)}
-                  className={
-                    n === safePage
-                      ? "size-11 rounded bg-primary text-body-md font-semibold text-on-primary"
-                      : "size-11 cursor-pointer rounded bg-inverse-surface text-body-md font-semibold text-white hover:bg-primary-hover"
-                  }
+                  aria-label="Previous page"
+                  disabled={safePage === 1}
+                  onClick={() => update((next) => next.set("page", String(safePage - 1)), false)}
+                  className="grid size-10 cursor-pointer place-items-center rounded-lg bg-primary text-white transition-colors hover:bg-primary-hover disabled:cursor-not-allowed disabled:bg-surface-container disabled:text-outline"
                 >
-                  {n}
+                  <ChevronLeft aria-hidden="true" className="size-4" />
                 </button>
-              ))}
+
+                <div className="flex items-center gap-1 px-1">
+                  {Array.from({ length: totalPages }, (_, i) => i + 1).map((n) => (
+                    <button
+                      key={n}
+                      type="button"
+                      aria-label={`Go to page ${n}`}
+                      aria-current={n === safePage ? "page" : undefined}
+                      onClick={() => update((next) => next.set("page", String(n)), false)}
+                      className={
+                        n === safePage
+                          ? "grid size-10 cursor-pointer place-items-center rounded-lg bg-primary text-label-md font-semibold !text-white"
+                          : "grid size-10 cursor-pointer place-items-center rounded-lg bg-primary text-label-md font-semibold text-white transition-colors hover:bg-primary-hover"
+                      }
+                    >
+                      {n}
+                    </button>
+                  ))}
+                </div>
+
+                <button
+                  type="button"
+                  aria-label="Next page"
+                  disabled={safePage === totalPages}
+                  onClick={() => update((next) => next.set("page", String(safePage + 1)), false)}
+                  className="grid size-10 cursor-pointer place-items-center rounded-lg bg-primary text-white transition-colors hover:bg-primary-hover disabled:cursor-not-allowed disabled:bg-surface-container disabled:text-outline"
+                >
+                  <ChevronRight aria-hidden="true" className="size-4" />
+                </button>
+              </div>
             </nav>
           )}
         </div>

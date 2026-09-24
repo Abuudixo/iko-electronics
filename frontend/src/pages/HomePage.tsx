@@ -364,7 +364,7 @@ export default function HomePage() {
         </p>
         <Link
           to="/contact"
-          className="mx-auto mt-5 inline-flex h-11 cursor-pointer items-center gap-2 rounded bg-[#20d66b] px-5 text-label-md font-semibold text-white shadow-none transition-colors hover:bg-[#19bd5c]"
+          className="mx-auto mt-5 inline-flex h-11 cursor-pointer items-center gap-2 rounded bg-primary px-5 text-label-md font-semibold text-white shadow-none transition-colors hover:bg-primary-hover"
         >
           <MessageCircle aria-hidden="true" className="size-5" />
           Chat on WhatsApp

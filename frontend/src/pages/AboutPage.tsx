@@ -110,7 +110,7 @@ export default function AboutPage() {
       <Link
         to="/contact"
         aria-label="Contact IKO Electronics on WhatsApp"
-        className="fixed bottom-6 right-6 z-20 grid size-16 place-items-center rounded-full bg-[#22c968] text-white shadow-lg transition-transform hover:scale-105"
+        className="fixed bottom-6 right-6 z-20 grid size-16 place-items-center rounded-full bg-primary text-white shadow-none transition-colors hover:bg-primary-hover"
       >
         <MessageCircle aria-hidden="true" className="size-8" strokeWidth={2.2} />
       </Link>

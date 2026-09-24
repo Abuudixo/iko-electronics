@@ -9,7 +9,7 @@ const VARIANTS: Record<Variant, string> = {
   primary:
     "bg-primary text-white hover:bg-primary-hover active:bg-primary-pressed disabled:bg-outline disabled:text-white",
   secondary:
-    "bg-inverse-surface text-white hover:bg-primary-hover active:bg-primary-pressed disabled:bg-outline disabled:text-white",
+    "bg-primary text-white hover:bg-primary-hover active:bg-primary-pressed disabled:bg-outline disabled:text-white",
   ghost:
     "bg-primary text-white hover:bg-primary-hover active:bg-primary-pressed disabled:bg-outline disabled:text-white",
   danger: "bg-error text-white hover:bg-on-error-container disabled:bg-outline disabled:text-white",
